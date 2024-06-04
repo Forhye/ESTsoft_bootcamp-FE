@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>목록 관련 태그</title>
+  </head>
+  <body>
+    <h1>목록 관련 태그</h1>
+
+    <!--자식요소로는 li만 사용할 수 있다 / li안에서는 다른 요소 사용 가능-->
+    <ol type="A" reversed>
+      <!--정수만 사용 / 기본값으로는 1로 되어있음-->
+      <!--reversed 순서 역전 / 기본값은 오름차순 <=> 내림차순-->
+      <li>라이캣</li>
+      <li>로지</li>
+    </ol>
+    <ol type="1">
+      <li>라이캣</li>
+      <li value="5">무지</li>
+      <!--중간 임의적으로 넘버를 수정할 수 있다-->
+      <li><p>지지</p></li>
+      <li>하티</li>
+    </ol>
+
+    <ul>
+      <li>라이캣</li>
+      <li>무지</li>
+      <li>지지</li>
+      <li>하티</li>
+    </ul>
+
+    <dl>
+      <dt>WEB</dt>
+      <dt>WWW</dt>
+      <dt>W3</dt>
+      <dt>World Wide Web</dt>
+      <dd>
+        인터넷에 연결된 컴퓨터를 통해 사람들이 정보를 공유할 수 있는 전 세계적인
+        정보 공간
+      </dd>
+      <dd></dd>
+    </dl>
+
+    <dl>
+      <dt>위니브</dt>
+      <dd>제주도에 위치한 ICT 콘텐츠 회사</dd>
+      <dd>개발과 관련된 강의를 주로 진행</dd>
+      <dd>
+        <a href="https://archive.weniv.co.kr//">위니브 아카이브 보러가기</a>
+      </dd>
+    </dl>
+  </body>
+</html>
