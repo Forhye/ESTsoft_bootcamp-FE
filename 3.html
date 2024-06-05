@@ -5,5 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>블록레벨요소 및 인라인레벨요소</title>
   </head>
-  <body></body>
+  <body>
+    <!--콘텐츠의 길이와 상관없이 한줄을 모두 차지
+    스타일 적용을 위한 용도로 사용 권장
+    시멘틱 태그 우선 사용을 권장하고 그 외의 영역은 div를 사용
+    오래된 웹 브라우저 지원과 접근성을 위해 아직도 div를 사용함-->
+    <!-- 블록 요소 : ★언제나 새로운 줄에서 시작
+    인라인 요소 안에 중첩될 수 없다.-->
+    <div style="background-color: antiquewhite">전 div입니다</div>
+
+    <!--인라인요소
+    딱 감싸고있는 컨텐츠만 지정 / 콘텐츠의 흐름을 끊지 않음
+    문장, 단어 같은 작은 
+    할당된 공간만 차지 span, a, em, strong -->
+    <p>
+      이건
+      <span style="background-color: red">span</span> 태그입니다.
+    </p>
+    <p>
+      이런식으로
+      <span style="font-weight: bold">사용</span> 합니다.
+    </p>
+
+    <!-- O -->
+    <div>
+      블록요소 안
+      <span>인라인요소 중첩 가능</span>
+    </div>
+
+    <!-- X -->
+    <span>
+      인라인요소 안
+      <div>블록요소 중첩 불가능</div>
+    </span>
+
+    <!--예외적으로 a 태그안에는 블록 요소를 넣을 수 있다
+    그러면 공간 자체에 링크가 덮어짐-->
+
+    <a href="”#”"
+      ><div style="background-color: antiquewhite">전 div입니다</div>
+    </a>
+
+    <!--블록요소 시작-->
+    <div style="background-color: antiquewhite">div</div>
+    <p style="background-color: antiquewhite">p</p>
+    <ul style="background-color: aqua">
+      <li style="background-color: red">li태그입니다.</li>
+      <li style="background-color: yellow">li태그입니다.</li>
+    </ul>
+    <!--블록요소 끝-->
+
+    <!--인라인요소 시작-->
+    <a href="”#”">저는a입니다</a>
+    <span>나는span이예요</span>
+    <span>span이예요</span>
+    <span>span이예요</span>
+    <span>span이예요</span>
+    <span>span이예요</span>
+    <!--인라인요소 끝-->
+
+    <!--인라인블럭요소 시작
+    높이와 너비를 개별로 조절할 수 있지만 규칙은 인라인 요소와 같다-->
+    <br />
+    <button>button</button>
+    <button>button</button>
+    <button>button</button>
+    <button>button</button>
+    <button>button</button>
+    <button>button</button>
+
+    <!--인라인블럭요소 끝-->
+  </body>
 </html>
