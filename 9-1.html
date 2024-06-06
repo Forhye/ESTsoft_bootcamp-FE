@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table {
+        border-collapse: collapse;
+        border: 3px solid #000;
+        table-layout: fixed;
+        width: 100%;
+      }
+
+      caption {
+        caption-side: bottom;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 6px 20px;
+      }
+
+      th {
+        background-color: #eee;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      tfoot {
+        font-weight: bold;
+      }
+    </style>
+    <title>배운것들을 활용하여 html 만들기 복습</title>
+  </head>
+  <body>
+    <!--기사 출처 표시-->
+    <p
+      cite="https://www.msn.com/ko-kr/sports/other/%EC%86%90%ED%9D%A5%EB%AF%BC-%EC%9C%A0%EC%9D%BC%ED%95%9C-30%EB%8C%80-%EC%84%B8%EA%B3%84-%EC%B5%9C%EA%B3%A0-%EB%A0%88%EC%95%8C-%EB%93%80%EC%98%A4-%EB%8B%A4%EC%9D%8C-3%EC%9C%84-%EC%97%AC%EC%A0%84%ED%95%9C-%EC%B5%9C%EA%B0%95-%EC%9C%99%EC%96%B4-%EC%9E%85%EC%A6%9D/ar-BB1nHDb0?ocid=winp1taskbar&cvid=eae6f833944f415c8754abfabda9f27b&ei=13"
+    >
+      배웠던 코드들을 활용해서 기사 내용 클론
+      <cite>ㅡ 마이크로소프트 일간 스포츠 기사 발췌</cite>
+    </p>
+
+    <!--기사 제목-->
+    <h1>
+      손흥민 유일한 '30대'...세계 최고 '레알 듀오' 다음 3위, 여전한 최강 윙어
+      입증
+    </h1>
+    <p>김희우 님의 스토리 · 지금 · 1분 읽음</p>
+
+    <!--기사 이미지 테이블 화-->
+    <table>
+      <caption>
+        손흥민이 2023~24시즌 왼쪽 윙어 중 세 번째로 좋은 평가를 받았다.
+        사진=SCORE 90
+        <cite>제공 : 일간 스포츠</cite>
+      </caption>
+
+      <thead>
+        <tr>
+          <th colspan="6">TOP 5 - LEFT WINGERS 2023/24</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>name</th>
+          <th colspan="2">contry</th>
+          <th colspan="2">Rank</th>
+          <th>refo</th>
+        </tr>
+        <tr>
+          <td>VINICIUS</td>
+          <td>브라질</td>
+          <td><img src="" alt="랭크1 선수 이미지" /></td>
+          <td colspan="2">RANK 1</td>
+          <td>레알 마드리드</td>
+        </tr>
+        <tr>
+          <td>MBAPPE</td>
+          <td>러시아</td>
+          <td><img src="" alt="랭크2 선수 이미지" /></td>
+          <td colspan="2">RANK 2</td>
+          <td>생제르맹</td>
+        </tr>
+        <tr>
+          <td>SON</td>
+          <td>한국</td>
+          <td><img src="" alt="랭크3 선수 이미지" /></td>
+          <td colspan="2">RANK 3</td>
+          <td>토트넘</td>
+        </tr>
+        <tr>
+          <td>R.LEAO</td>
+          <td>포르투갈</td>
+          <td><img src="" alt="랭크4 선수 이미지" /></td>
+          <td colspan="2">RANK 4</td>
+          <td>AC 밀란</td>
+        </tr>
+        <tr>
+          <td>N.WILLIAMS</td>
+          <td>스페인</td>
+          <td><img src="" alt="랭크5 선수 이미지" /></td>
+          <td colspan="2">RANK 5</td>
+          <td>빌바오</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      손흥민(토트넘)은 여전히 세계 최고의 공격수 중 하나다. 30대에 접어들었지만,
+      최고의 20대 선수들과 어깨를 나란히 했다.
+    </p>
+    <br />
+    <p>
+      축구 콘텐츠 매체 SCORE 90은 5일(한국시간) 각 포지션별 최고의 선수 톱5를
+      선정해 공개했다.
+    </p>
+    손흥민은 왼쪽 윙어 부문 3위를 차지했다. 레알 마드리드 듀오인 비니시우스
+    주니오르, 킬리안 음바페만이 그의 위에 자리했다. 사실상 음바페가 중앙
+    공격수로도 자주 분류된다는 것을 고려하면, 비니시우스 다음으로 인정을 받은
+    것이다.
+    <br />
+
+    <p>
+      손흥민 뒤로는 하파엘 레앙(AC밀란) 니코 윌리엄스(아틀레틱 빌바오)가 각각 4,
+      5위를 차지했다. 손흥민을 제외하고 톱5에 이름을 올린 선수는 모두 25세
+      이하다.
+    </p>
+    <br />
+    <p>그는 젊은 선수들과 어깨를 나란히 하기 충분한 활약을 펼쳤다.</p>
+
+    <figure>
+      <img src="./src/son.jpg" alt="주먹을 쥐고 있는 손흥민" />
+      <figcaption>
+        아스널을 상대로 리그 16호골을 기록한 손흥민. 사진=AFP 연합뉴스
+        <p cite>제공 : 일간스포츠</p>
+      </figcaption>
+    </figure>
+
+    <p>
+      토트넘 이적 후 꾸준히 정상급 활약을 선보인 손흥민은 2023~24시즌 잉글랜드
+      프리미어리그(EPL) 35경기에 나서 17골 10도움을 기록, 팀 내 득점·도움 모두
+      1위를 차지했다. 커리어 통산 세 번째 10-10을 달성하기도 했다. EPL을 넘어
+      세계 최고 윙어 중 하나로 인정받는 이유다. <br />
+    </p>
+
+    <p>
+      대부분 톱5에 든 선수들이 빅클럽 소속이라는 것을 고려하면, 손흥민이 여전히
+      왼쪽 윙어 5위 안에 든 것은 그가 얼마나 인정받는지 체감할 수 있는 대목이다.
+    </p>
+    <br />
+    <p>
+      골키퍼 부문에서는 그레고어 코벨(보루시아 도르트문트)이 1위를 차지했다.
+      최고의 센터백으로는 안토니오 뤼디거(레알)를 꼽았다. 다니 카르바할(레알)과
+      알레한드로 그리말도(바이엘 레버쿠젠)가 각각 최고의 오른쪽, 왼쪽 풀백으로
+      뽑혔다. 수비형 미드필더 1위는 로드리(맨체스터 시티) 최고의 중앙 미드필더는
+      토니 크로스(레알)였다. 공격형 미드필더 중 으뜸은 역시 주드
+      벨링엄(레알)이었다.
+    </p>
+    <br />
+    <p>
+      오른쪽 윙어와 스트라이커 1위는 각각 필 포든(맨시티)과 해리 케인(바이에른
+      뮌헨)이 차지했다.
+    </p>
+    <br />
+    <p>
+      대체로 2023~24시즌 유럽 무대에서 두각을 드러낸 빅클럽 소속의 선수들이 각
+      포지션 톱5에 이름을 올렸다. 토트넘에서는 손흥민과 오른쪽 풀백 5위로 꼽힌
+      페드로 포로만이 SCORE90이 뽑은 각 포지션 톱5에 선정됐다.
+    </p>
+
+    김희웅 기자
+  </body>
+</html>
