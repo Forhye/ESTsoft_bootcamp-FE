@@ -46,28 +46,29 @@
 
       <!--1번째 행 / 제목 1-->
       <thead>
-        <th>구분</th>
-        <th rowspan="2">한국사 영역</th>
-        <th>국어영역</th>
-        <th>수학영역</th>
-        <th rowspan="2">영어영역</th>
-        <th colspan="2">탐구영역</th>
-        <th>제 2외국어/한문영역</th>
+        <th>구분</th> <!--scope는 row 또는 col중 하나만 사용할 수 있다-->
+        <th scope="col" rowspan="2">한국사 영역</th>
+        <th scope="col">국어영역</th>
+        <th scope="col">수학영역</th>
+        <th scope="col" rowspan="2">영어영역</th>
+        <th scope="colgroup" colspan="2">탐구영역</th>
+        <th scope="col">제 2외국어/<br>한문영역</th>
+
         <!--2번째 행 / 제목 2-->
         <tr>
-          <th>선택과목</th>
-          <th>화법과 작문</th>
-          <th>확률과 통계</th>
-          <th>생활과 윤리</th>
-          <th>지구과학1</th>
-          <th>독일어</th>
+          <th scope="row">선택과목</th>
+          <th scope="col">화법과 작문</th>
+          <th scope="col">확률과 통계</th>
+          <th scope="col">생활과 윤리</th>
+          <th scope="col">지구과학1</th>
+          <th scope="col">독일어</th>
         </tr>
       </thead>
 
       <tbody>
         <!--3번째 행 / 본문 1-->
         <tr>
-          <th>표준점수</th>
+          <th scope="row">표준점수</th>
           <td rowspan="2">&nbsp;</td>
           <td>131</td>
           <td>137</td>
@@ -78,17 +79,17 @@
         </tr>
         <!--4번째 행 / 본문 2-->
         <tr>
-          <th>백분위</th>
+          <th scope="row">백분위</th>
           <td>93</td>
           <td>95</td>
           <td>75</td>
           <td>93</td>
         </tr>
 
-        <tfoot>
+      <tfoot>
         <!--5번째 행 / 푸터-->
         <tr>
-          <th>등급</th>
+          <th scope="row">등급</th>
           <td>2</td>
           <td>2</td>
           <td>2</td>
@@ -97,7 +98,7 @@
           <td>2</td>
           <td>2</td>
         </tr>
-    </tfoot>
+      </tfoot>
       </tbody>
     </table>
   </body>
