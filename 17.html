@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <style>
+      form {
+        background-color: #ffbf00;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>로그인</h1>
+    <!--get 방식은 브라우저에 의해 캐시되어 저장되는 방식
+    길이의 제한이 있고 보안상 취약함 검색할때 사용됨-->
+
+    <!--post 보안성이 높다 데이터를 별도로 첨부해서 서버로 전달
+    자바스크립트에서 다시 볼 내용-->
+    <form action="" method="get" autocomplete="off">
+      <label for="id">ID</label>
+      <input
+        type="text"
+        id="id"
+        name="id"
+        placeholder="아이디를 입력하세요"
+        required
+        value="rosy"
+        readonly
+      /><br />
+
+      <label for="pw">PASS</label>
+      <input
+        type="password"
+        id="pw"
+        name="pw"
+        placeholder="비밀번호를 입력하세요"
+      /><br />
+
+      <label for="username">NICKNAME</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="닉네임을 입력하세요"
+      /><br />
+
+      <label for="email">E-MAIL</label>
+      <input
+        type="email"
+        autocomplete="email"
+        placeholder="이메일을 입력하세요"
+        disabled
+      /><br />
+
+      <!--임시 비활성화 disabled-->
+      <!--disabled vs readonly
+      서버로 넘길때 value의 값을 넘길 수 있으나, 없느냐-->
+
+      <input type="submit" />
+    </form>
+  </body>
+</html>
