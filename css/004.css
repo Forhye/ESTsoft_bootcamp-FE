@@ -1,0 +1,6 @@
+/*at-rule 문법 엣룰 최상단에 작성*/
+@import url("004-font.css");
+
+h1 {
+  color: #ffbf00;
+}

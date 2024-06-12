@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상속</title>
+    <style>
+      section {
+        color: #ffbf00;
+        border: 5px solid pink;
+      }
+
+      /* 부모와 동일하게 상속을 받겠다 */
+      /* h1,
+      h2,
+      p {
+        border: inherit;
+      } */
+
+      /* 브라우저 기본 스타일 속성을 따르겠다
+      (상속되지 않는 태그는 상속하지 않는다) */
+      h1,
+      h2,
+      p {
+        border: initial;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>hello</h1>
+      <h2>heloooo?</h2>
+      <p>helloooooo</p>
+
+      <button>button</button>
+      <input type="text" value="input" />
+    </section>
+  </body>
+</html>

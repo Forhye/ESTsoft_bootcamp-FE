@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자손선택자</title>
+    <style>
+      /* 자손 선택자 */
+      section p {
+        color: #ffbf00;
+        font-weight: bold;
+      }
+
+      /* 자식 선택자 (직계 자손만) */
+      section > p {
+        color: red;
+      }
+
+      /* section 이후의 형제 태그들 */
+      section ~ p {
+        text-decoration: underline;
+      }
+
+      /* 바로 뒤에 인접한 형제만 선택 */
+      section + p {
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>p</p>
+    <p>p</p>
+    <p>p</p>
+
+    <section>
+      <div><p>p</p></div>
+      <p>p</p>
+      <p>p</p>
+    </section>
+
+    <p>p</p>
+    <p>p</p>
+    <p>p</p>
+  </body>
+</html>
