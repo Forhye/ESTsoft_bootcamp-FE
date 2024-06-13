@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>슬로건 실습</title>
+
+    <link rel="stylesheet" href="/css/027-slogan.css" />
+
+    <!--css -->
+    <style>
+      html {
+        text-align: center;
+        background-color: black;
+      }
+      img {
+        width: 80px;
+      }
+
+      .nbsp {
+        word-spacing: 35px;
+      }
+      .nbsp1 {
+        word-spacing: 20px;
+      }
+      .nbsp2 {
+        word-spacing: 10px;
+      }
+
+      .slo-top {
+        font-size: 3em;
+        text-decoration: #ffbf00 overline underline dashed 3px;
+      }
+
+      .slo-bottom {
+        font-size: 5em;
+        text-shadow: -16px -9px 14px rgba(255, 187, 0, 0.6);
+        margin: 0;
+      }
+
+      .super {
+        vertical-align: super;
+      }
+
+      .middle {
+        vertical-align: middle;
+      }
+      .text-top {
+        vertical-align: text-bottom;
+      }
+
+      .text-bottom {
+        vertical-align: text-top;
+      }
+
+      .lorem {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p class="slo-top">귀여운게</p>
+      <img src="./img/cu (1).jpg" alt="" class="super" />
+      <sapn class="nbsp">&nbsp;</sapn>
+      <img src="./img/cu (3).jpg" alt="" class="middle" />
+      <sapn class="nbsp1">&nbsp;</sapn>
+      <img src="./img/cu (5).jpg" alt="" class="text-top" />
+      <sapn class="nbsp2">&nbsp;</sapn>
+      <img src="./img/cu (4).jpg" alt="" class="text-bottom" />
+      <p class="slo-bottom">
+        <span class="super">최</span>
+        <span class="middle">고</span>
+        <span class="text-top">야</span>
+        <span class="super">♥</span>
+      </p>
+    </div>
+    <p class="lorem">Lorem ipsum dolor sit amet.</p>
+  </body>
+</html>

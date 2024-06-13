@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>텍스트 정렬</title>
+
+    <!--css-->
+    <style>
+      p {
+        width: 300px;
+        background-color: #ffbf00;
+
+        /*왼쪽정렬*/
+        /* text-align: left; */
+
+        /*오른쪽 정렬*/
+        /* text-align: right; */
+
+        /*가운데 정렬*/
+        /* text-align: center; */
+
+        /* 양쪽 정렬 */
+        /* 중간에 이상한 여백이 생겨 좋지 않은 사용자 경험을 남길 수 있음 */
+        /* text-align: justify; */
+
+        /* text-align: start; */
+        text-align: end;
+      }
+
+      span {
+        font-size: 50px;
+        border: 2px solid #ffbf00;
+        line-height: 80px;
+      }
+
+      .baseline {
+        vertical-align: baseline;
+      }
+
+      .sub {
+        vertical-align: sub;
+      }
+
+      .super {
+        vertical-align: super;
+      }
+
+      .text-top {
+        vertical-align: text-top;
+      }
+
+      .text-bottom {
+        vertical-align: text-bottom;
+      }
+
+      .middle {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem
+      voluptate sequi hic quisquam dolore a corrupti fuga, quasi consequuntur
+      nulla ipsa obcaecati, minima, vero beatae aut eveniet amet dolores est!
+    </p>
+
+    <span>
+      부모요소
+      <span class="baseline">baseline</span>
+    </span>
+    <br />
+    <span>
+      부모요소
+      <span class="sub"></span>
+      sub
+    </span>
+    <br />
+    <span>
+      부모요소
+      <span class="super">super</span>
+    </span>
+    <br />
+    <span>
+      부모요소
+      <span class="text-top">text-top</span>
+    </span>
+    <br />
+    <span>
+      부모요소
+      <span class="text-bottom">text-bottom</span>
+    </span>
+    <br />
+    <span>
+      부모요소
+      <span class="middle">middle</span>
+    </span>
+    <br />
+    <span>
+      부모요소
+      <span class="middle">middle</span>
+    </span>
+    <br />
+
+    <span>
+      부모요소
+      <span class="middle">middle</span>
+    </span>
+    <br />
+
+    <span>
+      부모요소
+      <span class="middle">middle</span>
+    </span>
+    <br />
+
+    <button type="button" class="btn btn-primary mt-5" onclick="">
+      test start
+    </button>
+    <button type="button" class="btn btn-primary mt-5" onclick="">
+      test start
+    </button>
+    <button type="button" class="btn btn-primary mt-5" onclick="">
+      test start
+    </button>
+  </body>
+</html>

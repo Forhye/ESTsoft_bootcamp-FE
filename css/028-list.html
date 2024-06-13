@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리스트 스타일</title>
+
+    <!--css-->
+    <style>
+      /* 잘 사용하지 않는 리스트 스타일 */
+      /* 보통은 초기화를 시키고 가상요소를 넣어 디자인을 해줌 */
+      ol {
+        /* 들여쓰기 */
+        /* list-style-position: inside; */
+
+        /* 리스트 스타일 모두 지우기 1. 2. 같은거 */
+        list-style: none;
+        /* padding: 0; */
+        list-style-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' height='20' width='20' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'><polyline points='20 6 9 17 4 12'></polyline></svg>");
+      }
+
+      ul {
+        /* 기본스타일 꽉찬 동그라미 */
+        /* list-style-type: disc; */
+
+        /* 속이 빈 동그라미 */
+        /* list-style-type: circle; */
+
+        /* 네모네모 */
+        /* list-style-type: square; */
+
+        /* 숫자 */
+        list-style-type: decimal;
+
+        list-style-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' height='20' width='20' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'><polyline points='20 6 9 17 4 12'></polyline></svg>");
+      }
+    </style>
+  </head>
+  <body>
+    <ol>
+      <!-- 타입으로 해당만 블렛을 변경할 수 있다 -->
+      <li type="a">리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+    </ol>
+
+    <ul>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+    </ul>
+  </body>
+</html>

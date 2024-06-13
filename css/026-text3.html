@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>word-break</title>
+
+    <!--css-->
+    <style>
+      p {
+        background-color: #ffbf00;
+        width: 500px;
+
+        /* word-break: break-all; */
+        word-break: keep-all;
+
+        /* 1줄 말줄임처리 */
+        /* white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; */
+
+        /* 여러줄 말줄임처리, 아래는 3줄 3수정하면 수정값대로*/
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+
+        /* 폰트 기울임 */
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quisquam
+      pariatur velit optio autem tempora numquam. Harum expedita accusantium,
+      molestias tenetur odit atque temporibus dignissimos, doloribus, possimus
+      hic sapiente excepturi? Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Facere nulla nostrum quaerat optio corporis ullam distinctio autem
+      ex nemo similique necessitatibus laudantium et ad praesentium, voluptatem
+      amet vel vitae consectetur!
+    </p>
+  </body>
+</html>

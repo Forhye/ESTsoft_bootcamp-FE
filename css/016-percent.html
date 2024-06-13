@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>퍼센트</title>
+
+    <!--css-->
+    <style>
+      /* px는 절대단위로 뷰포트를 아무리 조절해도 변하지 않음
+    크기나 위치가 항상 일정하게 유지되어야 하는 경우에 사용 */
+      div {
+        background-color: #555;
+        width: 500px;
+      }
+
+      /* 부모 요소를 기준으로, 부모가 500px니까 250px */
+      div div {
+        background-color: #ffbf00;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <strong>div width : 500px</strong>
+      <br />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quas
+      similique repellat illo soluta architecto? Deserunt aut voluptatem nihil
+      modi earum quo ex, hic labore cumque ipsa iure magni ipsum.
+
+      <div>hello World</div>
+    </div>
+  </body>
+</html>

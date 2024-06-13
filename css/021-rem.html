@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rem</title>
+
+    <!--css-->
+    <style>
+      html {
+        /*html의 폰트 사이즈를 10으로 변경해주면
+        rem의 사이즈도 변경된다*/
+        font-size: 20px;
+      }
+
+      .container {
+        font-size: 10px;
+        background-color: antiquewhite;
+      }
+
+      .container div {
+        border: 1px solid #ffbf00;
+      }
+
+      /* 부모 요소의 글자크키를 상속 받음
+      container의 10px * 2 = 2em -> 20px*/
+      .item1 {
+        font-size: 2em;
+      }
+
+      /* root em, 최상위 html의 글자 크기를 상속 받음
+      html의 16px * 2 = 2rem -> 32px*/
+      .item2 {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+        assumenda error delectus voluptas vero expedita dignissimos in. Fugiat
+        error, ut sed accusamus veniam recusandae. Facilis reprehenderit amet
+        vitae delectus pariatur!
+      </div>
+      <div class="item2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam ex
+        eaque, facere ipsam rem labore quae quo voluptatum autem mollitia
+        excepturi consequuntur, similique omnis corrupti reprehenderit nulla
+        molestias minima! Illum.
+      </div>
+    </div>
+  </body>
+</html>

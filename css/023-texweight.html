@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>텍스트 굵기</title>
+
+    <!--css-->
+    <style>
+      p {
+        /* font-weight: bold; */
+        font-weight: 400;
+
+        /*모두 대문자*/
+        /* text-transform: uppercase; */
+
+        /*첫글자만 대문자*/
+        text-transform: capitalize;
+      }
+
+      .estfe {
+        /* text-decoration-color: #ffbf00;
+        text-decoration-line: line-through overline underline;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 1px; */
+
+        text-decoration: #ffbf00 overline wavy 2px;
+      }
+
+      .text-shadow {
+        /*변형방지*/
+        text-transform: none;
+        font-size: 50px;
+        /* text-shadow: 1px 1px 2px red; */
+        text-shadow: -16px -9px 14px rgba(255, 187, 0, 0.6);
+        /*css적용 제너레이터가 많으니 내가 사용하고 싶은 css제너레이터가 있는지 검색해보기*/
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione officiis,
+      voluptate odio ad illum aspernatur culpa quisquam mollitia eveniet, sunt
+      a, praesentium quasi doloremque repellendus obcaecati impedit enim velit
+      animi.
+    </p>
+
+    <p class="estfe">EST 프론트엔드 양성과정 1기 여러분 안녕하세요</p>
+
+    <p class="text-shadow">Text Shadow</p>
+  </body>
+</html>

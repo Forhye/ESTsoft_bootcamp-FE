@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조적 가상 선택자</title>
+
+    <!-- css -->
+    <style>
+      li {
+        background-color: #eee;
+        margin-bottom: 20px;
+      }
+      li:first-child {
+        color: red;
+      }
+
+      li:last-child {
+        font-weight: 700;
+      }
+
+      li:nth-child(even) {
+        color: royalblue;
+      }
+
+      /* div안에 p 의 3번째 형제요소 */
+      /* div p:nth-of-type(3) {
+        color: maroon;
+      } */
+
+      /* 위와 같은 문법으로 둘 다 사용해도 된다 */
+      div p:nth-child(3) {
+        color: maroon;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p class="t1">안녕</p>
+      <p class="t1">안녕</p>
+      <p class="t1">안녕</p>
+      <p class="t1">안녕</p>
+      <p class="t1">안녕</p>
+
+      <p class="t2">안녕</p>
+      <p class="t2">안녕</p>
+      <p class="t2">안녕</p>
+      <p class="t2">안녕</p>
+      <p class="t2">안녕</p>
+    </div>
+
+    <hr />
+
+    <ol>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+    </ol>
+  </body>
+</html>
