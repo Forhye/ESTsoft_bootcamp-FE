@@ -1,0 +1,148 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+html {
+  background-color: #f2f2f2;
+}
+
+body {
+  margin: 0;
+}
+
+#logo {
+  display: block;
+  font-weight: 400;
+  font-size: 1.5rem;
+  /* margin-top: 13px; */
+  text-align: center;
+}
+
+header {
+  width: 100vmax;
+  height: 52px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+}
+
+header a {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+#content {
+  max-width: 394px;
+  margin: 67px auto 40px;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 2.25rem;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+  display: grid;
+  gap: 20px;
+}
+
+li {
+  display: grid;
+  align-items: center;
+}
+
+.btn-login {
+  display: block;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 302px;
+  height: 56px;
+  align-content: center;
+  text-decoration-line: none;
+}
+
+p.text-or {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.35);
+  font-size: 14px;
+  margin: 8px 0px;
+  padding-top: 20px;
+}
+
+p > span {
+  padding: 0 10px;
+}
+
+.text-or::before {
+  content: "";
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.35);
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+}
+.text-or::after {
+  content: "";
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.35);
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+.user-signup {
+  text-decoration-line: none;
+  font-weight: 700;
+  color: #333;
+}
+
+.user-signup::after {
+  color: #333;
+}
+
+.user-loginstate {
+  width: 100%;
+  text-align: start;
+}
+
+.gray {
+  color: #3f3f3f;
+}
+
+.email-gray {
+  color: #fff;
+  background-color: #333;
+}
+
+.naver-green {
+  color: #fff;
+  background-color: #38a71a;
+}
+
+.facebook-blue {
+  color: #fff;
+  background-color: #384380;
+}
+
+.line-green {
+  color: #fff;
+  background-color: #6cb97a;
+}

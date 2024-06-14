@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>후자 우선의 원칙</title>
+
+    <!-- css -->
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: #ffb00f;
+      }
+
+      /* 동일한 선택자에 동일한 속성이 사용되었을 경우엔 후자 우선의 원칙을 따른다 */
+      div {
+        background-color: maroon;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

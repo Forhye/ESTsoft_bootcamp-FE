@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상요소</title>
+
+    <!-- css -->
+    <style>
+      /* 가상요소는 태그의 자식요소로 넣어주는거라 부모요소가 있어야 한다 */
+      p::before {
+        content: "1기 두부 여러분 💛";
+        font-weight: bold;
+        color: #ffbf00;
+      }
+
+      /* 콜론 한개만 넣어줘도 상관없다 */
+      p::after {
+        content: "🤘🤘🤘";
+      }
+
+      /* img, br, input 태그는 닫는 태그가 없기 때문에 부모가 될 수 없음
+      가상 요소를 자식으로 넣어줄 수 없다 */
+
+      /* 인풋에 스타일링을 적용해줘도 placeholder 에는 적용되지 않음 */
+      /* input {
+        color: #ffbf00;
+      } */
+
+      input::placeholder {
+        color: #ffbf00;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <strong>안녕하세요</strong>
+      <strong>안녕하세요</strong>
+      <br />
+      <strong>안녕하세요</strong>
+      <strong>안녕하세요</strong>
+      <strong>안녕하세요</strong>
+    </p>
+
+    <img src="./cu (3).jpg" alt="" />
+    <input type="text" placeholder="이름을 적어주세요" />
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+      exercitationem repellat corporis ratione illo beatae cumque saepe
+      molestias recusandae, dolores reprehenderit, ducimus ut amet non iste,
+      dolor qui debitis consequuntur?
+    </p>
+  </body>
+</html>

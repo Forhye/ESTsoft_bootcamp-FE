@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자 우선순위 점수</title>
+
+    <!-- css -->
+    <style>
+      /* 클래스 + 유형 선택자 */
+      /* 10+1 */
+      .ul a {
+        color: yellow;
+      }
+
+      /* 클래스 선택자 */
+      /* 10 */
+      .click {
+        color: green;
+        background: black;
+      }
+
+      /* 유형 선택자 */
+      /* 1 * 12 */
+      /* 타입은 아무리 많아도 class 선택자를 뛰어넘을 수 없다 */
+      /* class 선택자도 100개가 넘게 있어도 id 선택자를 뛰어넘을 수 없다 */
+      html body main section article div ul li p strong span a {
+        background: purple;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <article>
+          <div>
+            <ul class="ul">
+              <li>
+                <p>
+                  <strong>
+                    <span>
+                      <a href="#" class="click">
+                        1. 이 글자는 어떤 색일까요? 2. 배경색은 어떤 색일까요?
+                      </a>
+                    </span>
+                  </strong>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

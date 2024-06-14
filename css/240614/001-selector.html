@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조적 가상 선택자</title>
+
+    <!-- css -->
+    <style>
+      /* div 안에 있는 형제 요소들 중 첫번째를 선택 해줘
+        child 방식 > 자손의 순번으로 결정 */
+      div.box1 > h1:nth-child(1) {
+        color: maroon;
+      }
+
+      /* 짝수만 선택해줘 (even)도 가능 
+      >는 직계자손만*/
+      div.box1 > :nth-child(2n) {
+        color: #ffbf00;
+      }
+
+      /* h1의 짝수만 선택해줘 */
+      div.box1 > h1:nth-child(2n) {
+        color: #ffb;
+      }
+
+      /* 전체중의 짝수만 선택해줘 */
+      div.box1 > *:nth-child(2n) {
+        color: cadetblue;
+      }
+
+      /* 태그의 유형 순번으로 결정
+      h1의 2n번째, h2의 2n번째, h3의 2n번째 */
+      div.box1 > :nth-of-type(2n) {
+        color: chartreuse;
+      }
+
+      div.box2 em,
+      span {
+        display: inline-block;
+        border: 1px solid white;
+        padding: 10px;
+      }
+
+      body > :first-child {
+        background-color: #eee;
+      }
+
+      /* body 태그의 직계 자손일 경우 :last-child는 적용이 안됩니다 */
+      body > :last-child {
+        background-color: #eee;
+      }
+
+      /* body 직계자손 중 last-child를 인식하지 못하기 때문에
+      모든것을 선택  */
+      body > :not(:last-child) {
+        background-color: pink;
+      }
+
+      /* 같은 유형에서의 순번이라서 em은 다른 태그여서 고려하지 않음
+      em도 7개가 있으면 7번째 em이 색칠된다 */
+      div.box2 :nth-of-type(7) {
+        color: red;
+      }
+
+      /* 동일한 유형의 형제가 없는, 형제 요소 중 유일하게 사용된 태그 */
+      div.box2 :only-of-type {
+        background-color: crimson;
+      }
+
+      /* :first-child 가 아닌 모든 요소 */
+      div.box2 :not(:first-child) {
+        font-weight: bold;
+      }
+
+      /* :last-child 가 아닌 모든 요소 */
+      div.box2 :not(:last-child) {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <h1>hello world</h1>
+      <h2>hello world</h2>
+      <h3>hello world</h3>
+
+      <h1>hello world</h1>
+      <h2>hello world</h2>
+      <h3>hello world</h3>
+
+      <h1>hello world</h1>
+      <h2>hello world</h2>
+      <h3>hello world</h3>
+    </div>
+
+    <div class="box2">
+      <span>span</span>
+      <span>span</span>
+      <span>span</span>
+      <span>span</span>
+      <em>em</em>
+      <em>em</em>
+      <em>em</em>
+      <em>em</em>
+      <em>em</em>
+      <em>em</em>
+      <em>em</em>
+      <span>span</span>
+      <span>span</span>
+      <span>span</span>
+    </div>
+  </body>
+</html>

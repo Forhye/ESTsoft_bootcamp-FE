@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구체성의 원칙</title>
+
+    <!-- css -->
+    <style>
+      /* 아래의 #id1 보다 구체적이어서 우선 적용됨
+      타입선택자 + 아이디 선택자 = 101점 */
+      div #id1 {
+        color: greenyellow;
+      }
+
+      /* 1점 */
+      p {
+        color: black;
+      }
+
+      /* 후자 우선의 원칙 */
+      /* 100점 */
+      #id1 {
+        color: royalblue;
+      }
+
+      /* 10점 */
+      .class {
+        color: #ffbf00;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="id1" class="class">1. 이 글자는 어떤 색일까요?</p>
+      <!-- 직접적으로 inline 스타일을 줘서 1000점이기 때문에 제일 먼저 적용 -->
+      <p id="id2" class="class" style="color: red">
+        2. 이 글자는 어떤 색일까요?
+      </p>
+    </div>
+
+    <!-- <div>inline은 그 자체에 스타일을 줄 수 있기 때문에 우선순위가 높다?</div> -->
+  </body>
+</html>

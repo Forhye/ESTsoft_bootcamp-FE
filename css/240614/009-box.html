@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 박스 모델</title>
+
+    <!-- CSS -->
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin-bottom: 30px;
+      }
+
+      .box1,
+      .box3 {
+        padding: 20px;
+        border: 10px solid black;
+      }
+
+      /* 전체 width 값에 패딩이랑 보더 값을 포함하겠다 */
+      /* 패딩은 내부여백, 마진은 외부여백 */
+      .box1 {
+        box-sizing: border-box;
+      }
+
+      .box3 {
+        box-sizing: content-box;
+      }
+
+      .box4 {
+        width: 600px;
+        background-color: aquamarine;
+
+        /* 부모요소가 무조건 있어야 한다 */
+        /* display: flex;
+        align-items: center; */
+      }
+
+      p {
+        width: 400px;
+        background-color: bisque;
+        /* 가운데 배치 */
+        /* margin: auto; */
+
+        /* 오른쪽 배치 */
+        /* 오른쪽 0 외부 여백이 없도록 부모 요소에 딱 붙어 있다 */
+        /* 마진으로는 수평 정렬은 가능하나 수직 정렬은 불가 */
+        margin: auto 0 auto auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">왜...60이 커져...?</div>
+
+    <div class="box4">
+      <p>margin을 사용한 배치</p>
+    </div>
+  </body>
+</html>

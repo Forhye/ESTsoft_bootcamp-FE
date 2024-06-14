@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상요소 실습</title>
+
+    <!-- css -->
+    <style>
+      /* 전역 변수 설정 */
+      :root {
+        --btn-padding: 15px;
+        --border-line-none: none;
+        --border-line: 15px solid #000;
+        --main-font-size: 24px;
+        --main-font-weight: 500;
+      }
+
+      /* 버튼 스타일링 */
+      button {
+        padding: var(--btn-padding);
+        border: var(--border-line-none);
+        font-size: var(--main-font-size);
+        font-weight: var(--main-font-weight);
+      }
+
+      /* 버튼의 첫번째 자식 스타일링 */
+      div.btn > :first-child {
+        background-color: red;
+        border: var(--border-line);
+      }
+
+      /* 버튼의 두번째 자식 스타일링 */
+      div.btn > :nth-child(2) {
+        background-color: orange;
+      }
+
+      /* 버튼의 세번째 자식 스타일링 */
+      div.btn > :nth-child(3) {
+        background-color: yellow;
+      }
+
+      /* 버튼의 네번째 자식 스타일링 */
+      div.btn > :nth-child(4) {
+        background-color: green;
+      }
+
+      /* 버튼의 다섯번째 자식 스타일링 */
+      div.btn > :nth-child(5) {
+        background-color: royalblue;
+      }
+
+      /* 버튼의 여섯번째 자식 스타일링 */
+      div.btn > :nth-child(6) {
+        background-color: rgb(35, 35, 86);
+      }
+
+      /* 버튼의 마지막 자식 스타일링 */
+      div.btn > :last-child {
+        background-color: rgb(151, 51, 202);
+        border: var(--border-line);
+      }
+
+      /* 버튼의 짝수 자식들의 스타일링 (even) */
+      div.btn > :nth-child(2n) {
+        color: white;
+      }
+
+      /* 버튼의 짝수가 아닌 자식들의 스타일링 */
+      div.btn > not:nth-child(2n) {
+        color: black;
+      }
+
+      /* li 스타일링 */
+      li {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* li의 앞 가상요소 */
+      /* li::before {
+        content: "💛";
+      } */
+
+      /* li의 첫번째 자식의 앞 가상요소 */
+      li:first-child:before {
+        content: "🦊";
+      }
+
+      /* li의 첫번째가 아닌 li의 앞 가상요소 넣기 */
+      li:not(first-child)::before {
+        content: "💛";
+      }
+
+      /* li의 마지막 자식의 뒤 가상요소 */
+      li:last-child::after {
+        content: " 멘토님";
+      }
+
+      /* li의 뒤 가상요소 */
+      li::after {
+        content: " 강사님";
+        font-size: 14px;
+        color: gray;
+        font-weight: var(--main-font-weight);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">
+      <button>빨강</button>
+      <button>주황</button>
+      <button>노랑</button>
+      <button>초록</button>
+      <button>파랑</button>
+      <button>남색</button>
+      <button>보라</button>
+    </div>
+
+    <div class="list">
+      <ul>
+        <li>지지</li>
+        <li>로지</li>
+        <li>웨이드</li>
+        <li>하티</li>
+        <li>라이캣</li>
+        <li>개리</li>
+        <li>빙키</li>
+      </ul>
+    </div>
+  </body>
+</html>
