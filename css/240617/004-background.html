@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>백그라운드</title>
+
+    <!--css-->
+    <style>
+      /* background 속성에 다 넣을 수 있지만 되도록
+        속성을 다 적어 따로 관리하기 쉽도록 권장 */
+      div {
+        font-size: 30px;
+        padding: 40px;
+        color: aliceblue;
+
+        background-color: aliceblue;
+        background-image: url(https://file2.nocutnews.co.kr/newsroom/image/2023/09/01/202309011650045428_0.jpg);
+        background-repeat: repeat-x;
+        background-position: 0 0;
+
+        /* 이미지가 짤리지 않는 선에서 가장 크게 contain */
+        /* 이미지가 짤리는걸 상관하지 않고 전체 영역에 꽉차게 cover */
+        background-size: cover;
+
+        /* 요소와 함께 백그라운드 이미지가 함께 올라감 */
+        /* background-attachment: scroll; */
+
+        /* 뷰포트를 기준으로 고정이 되기 때문에 */
+        /* 스크롤을 내려도 백그라운드 이미지는 고정이된다. */
+        /* background-attachment: fixed; */
+
+        border: 20px dotted #ffbf;
+
+        /* 컨텐츠 부터(에) 백그라운드를 설정 */
+        /* background-clip: content-box; */
+
+        /* 박스의 패딩부터(에) 백그라운드를 설정 */
+        /* background-clip: padding-box; */
+
+        /* 박스의 보더부터(에) 백그라운드를 설정 */
+        /* background-clip: border-box; */
+
+        /* 백그라운드 픽스드가 되어 있으면 오리진은 무시하고 클립으로 적용 */
+        background-origin: content-box;
+      }
+
+      body {
+        height: 10000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, dolorum
+      culpa ipsa laboriosam delectus odit distinctio nulla nihil reprehenderit
+      error non consequuntur, voluptatibus dolore alias. Eveniet autem delectus
+      dicta molestias? Sapiente, aspernatur? Ea numquam assumenda, sunt impedit
+      quibusdam quisquam sapiente delectus porro vitae commodi magnam tempora
+      quae eaque quas est fugiat ex fuga velit nostrum obcaecati quasi ab
+      provident facilis! Cum sapiente neque eos magnam harum tempore molestias
+      quisquam id maxime, perspiciatis hic perferendis voluptate? Expedita,
+      soluta officiis culpa, repudiandae obcaecati voluptas ipsa laborum tempore
+      eveniet eius eaque placeat? Voluptatum! Eos, temporibus architecto rerum
+      accusamus, perspiciatis nesciunt natus iusto placeat saepe velit
+      praesentium. Eveniet a saepe recusandae. A aliquam officiis aspernatur
+      consequatur, reiciendis perferendis, molestiae atque ea pariatur culpa
+      laudantium. Obcaecati incidunt molestias labore pariatur sunt nulla,
+      repudiandae magnam dolorum? Aliquid aspernatur aperiam nobis reiciendis
+      quibusdam perferendis sit fugit harum neque? Est voluptatibus
+      reprehenderit, consequuntur veniam voluptatem necessitatibus dolorem ut!
+    </div>
+  </body>
+</html>

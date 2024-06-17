@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>백그라운드 이미지</title>
+
+    <!--css-->
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-image: url(cat.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      div::before {
+        content: "";
+        display: block;
+        background-image: url(cat.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 문맥상 필요한 정보를 제공하지 않고 디자인적 요소일 경우 -->
+    <div></div>
+    <!-- 문맥상 필요한 정보를 제공할 때 -->
+    <!-- 이미지에 필요한 정보가 중복될 때 alt를 지우지 말고 비운채 둔다 -->
+    <img
+      src="https://file2.nocutnews.co.kr/newsroom/image/2023/09/01/202309011650045428_0.jpg"
+      alt="뉴진스"
+    />
+  </body>
+</html>

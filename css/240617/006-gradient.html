@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그라디언트</title>
+
+    <!--css-->
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background: rgb(34, 193, 195);
+        background: linear-gradient(
+          0deg,
+          rgba(34, 193, 195, 1) 0%,
+          rgba(253, 187, 45, 1) 100%
+        );
+
+        /* 요소 그림자 */
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+        /* 0-1까지로 1에 가까울 수록 진해짐 */
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

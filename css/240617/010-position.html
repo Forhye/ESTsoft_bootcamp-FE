@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포지션</title>
+
+    <!--css-->
+    <style>
+      body {
+        height: 200vh;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #ffbf00;
+        opacity: 0.8;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* .relative {
+        position: relative
+      } */
+
+      .absolute {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .parent {
+        position: relative;
+      }
+
+      .static {
+        position: static;
+      }
+
+      .fixed {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+      }
+
+      /* 쇼핑몰 메뉴바 에서 많이 보던 스타일 */
+      /* 스크롤을 내려도 메뉴가 지정한 위치에 부터 있음 */
+      .sticky {
+        position: sticky;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="box static">static</div>
+      <div class="box fixed">fixed</div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet vel eaque
+      ab exercitationem possimus omnis debitis qui vitae voluptas praesentium
+      consequatur nulla nemo asperiores dolorum eveniet nisi officia, doloribus
+      minus! Iure aliquid est corporis sit dolor autem tempore rem possimus
+      veniam, magni, voluptates numquam quibusdam sapiente, deserunt maiores!
+      Quam esse quas quos unde officiis corrupti fuga doloribus, magnam error
+      nostrum.
+    </div>
+    <div class="box absolute">absolute</div>
+    <div class="box sticky">sticky</div>
+  </body>
+</html>
