@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+
+    <!--css-->
+    <style>
+      .container {
+        background-color: #ddd;
+        display: flex;
+        /* 주축의 방향 row(가로)가 기본 */
+        flex-direction: row;
+        /* 주축 방향 반전 (오른쪽부터 시작) */
+        flex-direction: row-reverse;
+
+        /* 주축이 세로 */
+        flex-direction: column;
+        /* 주축 방향 반전 (아래부터 시작) */
+        flex-direction: column-reverse;
+
+        /* 주축을 기준으로 정렬하는 속성 */
+        justify-content: center;
+        justify-content: left;
+        justify-content: right;
+        justify-content: flex-start;
+
+        /* 요소들의 양옆 여백을 동일하게 나눈다 */
+        justify-content: space-around;
+
+        /* 양 끝에 여백이 아예 없고 나머지 여백을 나눠 가진다 */
+        justify-content: space-between;
+
+        /* 사이사이 여백, 맨 끝 여백이 다 같다 */
+        justify-content: space-evenly;
+      }
+
+      .item {
+        background-color: mediumseagreen;
+        border: 1px solid salmon;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 무조건 부오ㅘ 자식이 필요 -->
+    <!-- 부모는 flex-container / 자식은 flex-item -->
+
+    <div class="container">
+      <div class="item">a</div>
+      <div class="item">b</div>
+      <div class="item">c</div>
+      <div class="item">d</div>
+      <div class="item">e</div>
+      <div class="item">f</div>
+      <div class="item">g</div>
+      <div class="item">f</div>
+    </div>
+  </body>
+</html>

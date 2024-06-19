@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float</title>
+
+    <!--css-->
+    <style>
+      img {
+        width: 200px;
+        height: 150px;
+      }
+
+      p {
+        border: 1px solid maroon;
+      }
+
+      img {
+        /* 요소가 보통 흐름으로부터 빠져 흐름을 놓치지 않게 해준다 */
+        float: right;
+      }
+
+      .clear {
+        /* 플롯 속성이 해제되어 원래 위치에 위치하게됨 */
+        clear: both; /* left 플롯이 해제되지 않음 right 플롯이 해제됨 */
+        /* float = clear 가 같아야 클리어가 적용됨
+        매번 확인할 수 없으니 both를 씀 */
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+      }
+
+      .box1 {
+        background-color: #ffb;
+        float: left;
+      }
+
+      .box2 {
+        background-color: maroon;
+        float: left;
+      }
+
+      .box3 {
+        background-color: mediumaquamarine;
+        float: left;
+      }
+
+      .container {
+        background-color: mediumslateblue;
+
+        /* 자식이 모두 float을 가지게 되면 부모컨테이너 요소의 높이에 자식들의 높이가 포함되지 않는다.*/
+        /* 해결 방법  1 */
+        /* height: 100px; */
+
+        /* 해제 방법 2 */
+        /* overflow: hidden; */
+      }
+
+      /* 방법 3 */
+      .clear-fix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="thumbnail.png" alt="" />
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime</p>
+    <p class="clear">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+      repellendus veritatis sunt natus provident ratione voluptatibus vero
+    </p>
+
+    <div class="container clear-fix">
+      container
+      <div class="box box1">a</div>
+      <div class="box box2">b</div>
+      <div class="box box3">c</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+body {
+  font-family: "Spoqa Han Sans Neo";
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* 
+section {
+  width: 350px;
+  top: 30px;
+  left: 25px;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+section > p {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 400;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background: #711bff;
+  border: none;
+  border-radius: 4px;
+}
+
+button > img {
+  width: 64px;
+  height: 18px;
+}
+
+button > span {
+  color: white;
+  line-height: 15px;
+  text-align: center;
+  font-weight: 600;
+  vertical-align: text-top;
+}
+
+div {
+  padding: 16px 0 0;
+  display: inline-block;
+}
+
+div > img {
+  width: 16px;
+  height: 16px;
+  float: left;
+}
+
+div.id-pw > span {
+  font-size: 12px;
+  color: #767676;
+  vertical-align: top;
+}
+
+div.signup {
+  float: right;
+}
+
+div > a {
+  font-size: 12px;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #767676;
+} */
+
+.login-wrap {
+  width: 350px;
+  /* height: 140px; */
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  padding: 19px 16px 18px;
+}
+
+.login-wrap > p {
+  font-size: 12px;
+}
+
+.login-wrap .btn-login {
+  background-color: #711bff;
+  color: #fff;
+  border-radius: 4px;
+  margin: 16px 0;
+  display: block;
+  text-align: center;
+  padding: 11px 0;
+}
+
+.login-wrap .btn-login img {
+  width: 64px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.login-wrap .btn-login span {
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.login-wrap .login-link {
+  color: #767676;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+.login-wrap .login-link img {
+  height: 16px;
+  width: 16px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.login-wrap .login-link span {
+  margin: 0 4px;
+}
+
+.login-wrap .login-link > div {
+  float: left;
+}
+
+.login-wrap .login-link > a {
+  float: right;
+}

@@ -1,0 +1,72 @@
+:root {
+  --color-purple: blueviolet;
+  --color-green: mediumseagreen;
+}
+
+body {
+  background-color: rgb(237, 237, 237);
+  font-weight: 300;
+}
+
+main {
+  display: flex;
+}
+
+section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+h2 > span {
+  color: var(--color-purple);
+  font-weight: 900;
+}
+
+div {
+  background-color: rgb(228, 228, 228);
+  padding: 30px;
+}
+
+.row-container > ul {
+  display: flex;
+  gap: 20px;
+  padding-left: 0;
+  /* justify-content: space-evenly; */
+}
+
+.row-container > ul li,
+.col-container > ul li {
+  list-style: none;
+  padding: 50px 15px;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 5px;
+  background-color: rgb(243, 243, 243);
+}
+
+.col-container {
+  /* 영원히 스트링 타입의 텍스트가 콘텐츠라면 */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* 가변적인 요소가 컨텐츠라면 */
+  /* align-items: center; */
+}
+
+.col-container > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 0;
+  align-items: center;
+}
+
+.col-container > ul > li {
+  width: fit-content;
+  padding: 50px;
+}

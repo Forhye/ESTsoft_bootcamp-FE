@@ -4,38 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="reset.css" />
   </head>
   <body>
-    <!--로그인 영역-->
+    <!-- 로그인 영역
     <section>
-      <h2>로그인</h2>
+      <h2 class="sr-only">로그인</h2>
       <p>더 편리해진 위니브에 오신 것을 환영합니다.</p>
 
-      <!--로그인 모달 open 버튼-->
+      로그인 모달 open 버튼-->
       <!-- 🌟복습하다가 찾은 오류(?)
       div의 형제요소가 없어 의미가 없다고 한다
       id를 특별한 이유가 없다면 굳이 사용하지 않기!-->
       <!--<div id="button">-->
-      <button>
-        <img src="./src/weniv-logo.png" alt="위니브 로고" class="logo" />
+      <!-- <button>
+        <img src="./img/weniv-logo.png" alt="위니브 로고" class="logo" />
         <span>로그인</span>
-      </button>
+      </button> -->
       <!--</div>-->
 
       <!--아이디, 비밀번호 찾기-->
-      <div>
+      <!-- <div class="id-pw"> -->
         <!--시각적인 요소로 아이콘 alt는 생략해도 된다-->
-        <img src="./src/icon-lock.png" alt="" />
+        <!-- <img src="./img/icon-lock.png" alt="" />
         <a href="#">아이디</a>
         <span>|</span>
         <a href="#">비밀번호 찾기</a>
-      </div>
+      </div> -->
 
       <!--회원가입-->
-      <div>
-        <img src="./src/icon-user.png" alt="회원가입 아이콘" />
+      <!-- <div class="signup">
+        <img src="./img/icon-user.png" alt="회원가입 아이콘" />
         <a href="#">회원가입</a>
-      </div>
+      </div> --> 
+
+      <!-- 섹션 요소에는 제목이 필요하다 -->
+      <section class="login-wrap">
+        <h2 class="sr-only">로그인</h2>
+
+        <p>더 편리해진 위니브에 오신 것을 환영합니다.</p>
+
+        <a href="#" class="btn-login">
+          <img src="./img/weniv-logo.png" alt="위니브 로고" />
+          로그인
+        </a>
+
+        <div class="login-link">
+          <div>
+            <a href="#">
+              <img src="./img/icon-lock.png" alt="" />
+              아이디
+            </a>
+
+            <!-- span보다는 가상요소로 넣어주기 좋았을거 같다 -->
+            <span>|</span>
+            <a href="#">비밀번호 찾기</a>
+          </div>
+
+          <a href="#">
+            <img src="./img/icon-user.png" alt="" />
+            회원가입
+          </a>
+        </div>
+      </section>
     </section>
   </body>
 </html>

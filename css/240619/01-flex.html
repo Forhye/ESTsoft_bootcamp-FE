@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        /* 부모가 자식들을 감싸서 화면이 줄어들면 줄바꿈이 된다 */
+        flex-wrap: wrap;
+
+        /* gap: 10px 10px; */
+      }
+
+      li {
+        width: 50px;
+        height: 50px;
+
+        /* order => 순서를 설정할 수 있다.
+        기본값으로는 order가 적용되지 않은 상태이다.
+        그래서 특정 요소에 order:1 을 주면 order가 적용된 리스트가 생겨서
+        제일 끝으로 이동한다. 값이 작은게 먼저 순서 
+        음수를 주면 적용되지 않은 애들보다 앞으로 가게된다.
+        html의 구조가 바뀐게 아니기 때문에 스크린리더에서는 html 작성된 순서로 읽힌다
+        시각적으로만, 디자인적으로만 바꾼것 */
+
+        /* 부모의 여백을 1:1만큼 나눠가진다 */
+        /* flex-grow: 1; */
+
+        /* 부모의 여백 중 다른 애들보다 3배 크게 가진다
+        크기가 커진다 X, 부모의 여백을 가진다
+        basis가 0이면 전체공간을 나누기 때문에 크기가 커진다 */
+        /* flex-grow: 3; */
+
+        /* 기본 세팅이 1로 되어 있어서 뷰포트가 줄어들때 크기가 줄어들게 보임
+        0으로 주면 뷰포트가 줄어들어도 요소들이 작아지지 않음*/
+        flex-shrink: 0;
+        background-color: teal;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+      <!-- <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li><a href="">5</a></li> -->
+    </ul>
+  </body>
+</html>

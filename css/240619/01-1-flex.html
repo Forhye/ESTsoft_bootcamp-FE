@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: flex;
+        /* justify-content: ; */
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* FLEX 컨테이너 안에서는 마진 AUTO가 작동한다. */
+
+      li {
+      }
+
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>lorem</p>
+    <section>
+      <nav>
+        <ul>
+          <li><a href="">HOME</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul>
+          <li><a href="">PEOPLE</a></li>
+          <li><a href="">CONTACT</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- block, inline, inline-block 은 요소와 요소 사이에 영향을 미친다
+    flex, grid 항상 부모와 자식간이 전제가 되어야 한다
+    html 구조가 복잡해질수 밖에 없다 -->
+
+    <!-- br 은 텍스트(문장) 줄바꿈 태그로 html 웹 표준상 사용하지 않는게 좋다 -->
+    <!-- html은 되도록 적게 쓴다 돔이라는 구조로 파싱한다(형태를 바꾼다 변환한다) -->
+    <!-- div보다는 태그는 적을수록 정돈 된것이다 -->
+  </body>
+</html>

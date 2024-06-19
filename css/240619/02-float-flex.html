@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float flex</title>
+
+    <!--css-->
+    <!-- <link rel="stylesheet" href="css/reset.css" /> -->
+    <link rel="stylesheet" href="02-float-flex.css" />
+  </head>
+  <body>
+    <div class="bg-color">
+      <header>header</header>
+
+      <!-- normal flow (일반적인 흐름 )
+     float을 주면 노멀플로우에서 벗어나서 다음 요소가 인식을 못하고
+     붙는다 -->
+
+      <!-- 텍스트는 플롯된 요소를 인식한다 -->
+      <div class="wrapper">
+        <section>
+          <article>section > article</article>
+        </section>
+        <aside>aside</aside>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

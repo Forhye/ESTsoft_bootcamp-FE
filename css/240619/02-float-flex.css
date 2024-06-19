@@ -1,0 +1,47 @@
+div.bg-color {
+  background-color: aquamarine;
+  padding: 20px;
+}
+
+header {
+  height: 100px;
+  color: white;
+  background-color: skyblue;
+
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+section {
+  /* float: left; */
+  /* width: 70%; */
+
+  flex-grow: 1;
+  height: 400px;
+  color: white;
+  background-color: royalblue;
+}
+
+aside {
+  /* float: left; */
+  /* width: 30%; */
+
+  /* flex-grow: 1; */
+  flex-basis: 200px;
+  /* 줄어들게하지 않을거야 */
+  flex-shrink: 0;
+  height: 400px;
+  background-color: yellowgreen;
+}
+
+footer {
+  /* float된 요소의 형제에게 overflow:hidden 은 부모요소가 있을 때 */
+  /* clear: both; */
+  height: 100px;
+  background-color: rosybrown;
+  margin-top: 10px;
+}

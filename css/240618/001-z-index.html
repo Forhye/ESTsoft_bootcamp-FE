@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>z-index</title>
+
+    <!--css-->
+    <style>
+      .parent {
+        background-color: antiquewhite;
+        /* 아무리 높게 줘도 자식 요소 위로 올라가 수 없다 */
+        z-index: 5;
+      }
+      .parent > div {
+        width: 100px;
+        height: 100px;
+      }
+
+      .box1 {
+        background-color: #ffbf00;
+        position: relative;
+        z-index: -3;
+      }
+
+      .box2 {
+        background-color: maroon;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        z-index: -2;
+      }
+
+      .box3 {
+        background-color: #ffb;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        /* 하지만 자식요소에서 숫자를 적게 주면 부모 밑으로 들어갈 수 있다. */
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="box1">a</div>
+      <div class="box2">b</div>
+      <div class="box3">c</div>
+    </div>
+  </body>
+</html>
