@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+
+    <!--css-->
+    <style>
+      .container {
+        height: 200px;
+        display: flex;
+        background-color: #eee;
+        padding: 10px;
+        gap: 30px;
+        flex-direction: column;
+      }
+
+      .item {
+        background-color: rosybrown;
+        border: 1px solid black;
+
+        /* 아무 변화가 없다 */
+        /* flex-grow: 0; */
+
+        /* 자식 요소들이 남은 여백을 동일하게 나눠가진다 */
+        /* 베이시스 값보다 더 늘어나게 할거냐 flex-grow */
+        flex-grow: 1;
+      }
+
+      .item2 {
+        /* 해당 요소만 2로 변경시 여백을 1:2:1:1 비율로 나눠가진다 */
+        /* flex-grow: 2; */
+
+        /* flex-basis가 먼저 적용됨 */
+        flex-basis: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item1">item A</div>
+      <div class="item item2">item B</div>
+      <div class="item item3">item C</div>
+      <div class="item item4">item D</div>
+    </div>
+  </body>
+</html>
