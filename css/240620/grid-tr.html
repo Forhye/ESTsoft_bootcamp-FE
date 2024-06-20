@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그리드 실습</title>
+
+    <!--css-->
+    <style>
+      .container {
+        display: grid;
+        gap: 10px;
+        width: 80vw;
+        height: 60vh;
+        grid-template-areas:
+          "bluue bluue bluue yeelow yeelow"
+          "bluue bluue bluue yeelow yeelow"
+          "puple puple orangee yeelow yeelow"
+          "pinkk pinkk greenn greenn greenn"
+          "pinkk pinkk greenn greenn greenn";
+      }
+
+      .item1 {
+        grid-area: bluue;
+        background-color: royalblue;
+      }
+      /* 
+      .item2 {
+        grid-area: bluue;
+        background-color: royalblue;
+      } */
+
+      .item2 {
+        grid-area: yeelow;
+        background-color: rgb(255, 229, 80);
+      }
+      .item3 {
+        grid-area: puple;
+        background-color: rgb(118, 101, 187);
+      }
+      .item4 {
+        grid-area: orangee;
+        background-color: rgb(253, 181, 123);
+      }
+      .item5 {
+        grid-area: pinkk;
+        background-color: rgb(255, 135, 135);
+      }
+      .item6 {
+        grid-area: greenn;
+        background-color: rgb(75, 141, 85);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div class="item item1">&nbsp</div>
+      <div class="item item2">&nbsp</div>
+      <div class="item item3">&nbsp</div>
+      <div class="item item4">&nbsp</div>
+      <div class="item item5">&nbsp</div>
+      <div class="item item6">&nbsp</div>
+      <!-- <div class="item item7">&nbsp</div> -->
+    </section>
+  </body>
+</html>

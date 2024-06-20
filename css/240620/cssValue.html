@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <!--css-->
+    <style>
+      /* 전역 변수 */
+      :root {
+        --personal-color: teal;
+      }
+
+      /* 지역 변수 */
+      ul {
+        padding: none;
+        list-style: none;
+        --second-color: royalblue;
+      }
+
+      li {
+        background-color: var(--second-color);
+      }
+
+      div {
+        background-color: var(--second-color);
+        border: 5px solid var(--personal-color);
+
+        /* 100% -20px 은 컴퓨터가 - 인지 -20px인지 인식하지못해서 유효하지 않다 */
+
+        width: calc(100% - 20px);
+      }
+
+      li {
+        float: left;
+        width: calc((100% - (24px * 2)) / 3);
+        font-size: clamp(1rem, 2.5vw, 2rem);
+      }
+      li:not(:first-child) {
+        margin-left: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+    </ul>
+    <!-- <div>hello world</div> -->
+  </body>
+</html>
