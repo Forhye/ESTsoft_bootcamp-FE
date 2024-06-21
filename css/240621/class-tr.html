@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상 클래스 버튼 실습</title>
+
+    <!--css-->
+    <!-- <link rel="stylesheet" href="class-tr.css" /> -->
+
+    <style>
+      :root {
+        --main-bg-color: #343f50;
+        --point-blue-color: #439aff;
+        --point-pink-color: #eb5757;
+        --disable-color: #1a202c;
+      }
+
+      div {
+        padding: 10px;
+        background-color: #fff;
+        font-weight: 800;
+      }
+
+      div:nth-child(even) {
+        background-color: #f5f5f5;
+      }
+
+      /* 1번째 Button */
+      button {
+        padding: 9px 25px;
+        background-color: var(--main-bg-color);
+      }
+
+      button:first-child {
+        color: #cbd5df;
+        font-weight: 700;
+        border: 1px solid #1a202c;
+        box-shadow: #4a5568 2px 2px 0px 0px inset;
+      }
+
+      button:first-child:hover {
+        color: #fff;
+        text-decoration: 3px solid underline;
+      }
+
+      button:first-child:active {
+        color: #fff;
+        text-decoration: 3px solid underline;
+      }
+
+      /* 2번째 Button */
+      button:nth-child(2) {
+        color: var(--point-blue-color);
+        border: 1px solid #1a202c;
+        box-shadow: #4a5568 2px 2px 0px 0px inset;
+      }
+
+      button:nth-child(2):hover {
+        background-color: var(--point-blue-color);
+        color: #fff;
+        text-decoration: 3px solid underline;
+        box-shadow: rgba(255, 255, 255, 0.2) 2px 2px 0px 0px inset;
+        border: 1px solid var(--point-blue-color);
+      }
+
+      button:nth-child(2):active {
+        background-color: var(--point-blue-color);
+        color: #fff;
+        text-decoration: 3px solid underline;
+        box-shadow: #ccc 2px 2px 0px 0px inset;
+        border: 1px solid var(--point-blue-color);
+      }
+
+      /* 3번째 Button */
+      button:nth-child(3) {
+        color: var(--point-pink-color);
+        border: 1px solid #1a202c;
+        box-shadow: #4a5568 2px 2px 0px 0px inset;
+      }
+
+      button:nth-child(3):hover {
+        background-color: var(--point-pink-color);
+        color: #fff;
+        text-decoration: 3px solid underline;
+        box-shadow: rgba(255, 255, 255, 0.2) 2px 2px 0px 0px inset;
+        border: 1px solid var(--point-pink-color);
+      }
+
+      button:nth-child(3):active {
+        background-color: var(--point-pink-color);
+        color: #fff;
+        text-decoration: 3px solid underline;
+        box-shadow: #ccc 2px 2px 0px 0px inset;
+        border: 1px solid var(--point-pink-color);
+      }
+
+      /* disabled */
+      button:disabled {
+        color: var(--disable-color);
+      }
+
+      button:disabled:hover {
+        color: var(--disable-color);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      default
+      <button type="button">Button</button>
+      <button type="button">Yes</button>
+      <button type="button">Del</button>
+    </div>
+    <div>
+      hover
+      <button type="button">Button</button>
+      <button type="button">Yes</button>
+      <button type="button">Del</button>
+    </div>
+    <div>
+      active
+      <button type="button">Button</button>
+      <button type="button">Yes</button>
+      <button type="button">Del</button>
+    </div>
+    <div>
+      disabled
+      <button type="button" disabled>Button</button>
+    </div>
+  </body>
+</html>
