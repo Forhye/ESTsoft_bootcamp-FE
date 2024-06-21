@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이션</title>
+
+    <!--css-->
+    <style>
+      @keyframes move-licat {
+        to {
+          background-position: right 0;
+        }
+      }
+
+      @keyframes move {
+        to {
+          transform: translateX(300px);
+        }
+      }
+
+      .licat {
+        width: 168px;
+        height: 200px;
+        background: url(keyframes-licat.png) no-repeat 0 0 / auto 100%;
+        /* 자바스크립트보다 css로 애니메이션을 구현하는게 더  ,,, */
+        animation: move-licat 0.51s infinite steps(6);
+      }
+
+      div {
+        width: 168px;
+        height: 200px;
+        background-color: #ffbf00;
+        animation: move 2s infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div class="licat"></div>
+  </body>
+</html>
