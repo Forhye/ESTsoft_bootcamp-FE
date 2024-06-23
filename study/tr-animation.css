@@ -1,0 +1,55 @@
+@keyframes box-spin {
+  0% {
+    top: 0;
+    left: 0;
+    width: 100px;
+    border-radius: 100px;
+    background-color: #ffbf00;
+  }
+
+  25% {
+    top: 0;
+    left: 100%;
+    transform: translate(-100%);
+  }
+
+  50% {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+    background-color: royalblue;
+  }
+
+  75% {
+    top: 100%;
+    left: 0;
+    transform: translate(0, -100%);
+    background-color: maroon;
+    border-radius: 0%;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    background-color: #ffbf00;
+  }
+}
+
+div {
+  /* 포지션을 지정해줘야 top, left 값이 먹는다 */
+  position: absolute;
+
+  /* 표정 가운데 정렬 해주기 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 기본 스타트 도형 스타일 */
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+
+  /* 애니메이션 */
+  animation: box-spin 5s infinite ease;
+}
