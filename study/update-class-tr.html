@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상 클래스 버튼 실습</title>
+
+    <!--css-->
+    <!-- <link rel="stylesheet" href="class-tr.css" /> -->
+
+    <style>
+      /* 자주 사용한 컬러 전역변수 선언 */
+      :root {
+        --main-bg-color: #343f50;
+        --point-blue-color: #439aff;
+        --point-pink-color: #eb5757;
+        --disable-color: #1a202c;
+        --dark-shadow: 2px 2px 0px 0px #00000033 inset;
+        --light-shadow: 2px 2px 0px 0px #ffffff33 inset;
+      }
+
+      /* div 영역 나누기 */
+      div {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      /* 버튼 기본 스타일 적용 */
+      button {
+        background-color: var(--main-bg-color);
+        padding: 9px 25px;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      button:hover {
+        color: #fff;
+        box-shadow: var(--light-shadow);
+        text-decoration: 2px underline #fff;
+      }
+      button:active {
+        box-shadow: var(--dark-shadow);
+      }
+
+      /* 가상선택자로 적용한 방법 */
+      .btn-wrap > button:first-child:hover {
+        text-decoration: 2px underline #fff;
+      }
+
+      .btn-wrap > button:nth-child(2) {
+        color: var(--point-blue-color);
+      }
+      .btn-wrap > button:nth-child(2):hover {
+        color: #fff;
+        background-color: var(--point-blue-color);
+      }
+
+      .btn-wrap > button:nth-child(3) {
+        color: var(--point-pink-color);
+      }
+      .btn-wrap > button:nth-child(3):hover {
+        color: #fff;
+        background-color: var(--point-pink-color);
+      }
+
+      .btn-wrap > button:disabled {
+        color: var(--disable-color);
+      }
+      .btn-wrap > button:disabled:hover {
+        color: var(--disable-color);
+        text-decoration: none;
+        box-shadow: none;
+      }
+
+      /* 클래스로 적용한 방법 */
+      .btn-positive {
+        color: var(--point-blue-color);
+      }
+      .btn-positive:hover {
+        color: #fff;
+        background-color: var(--point-blue-color);
+      }
+
+      .btn-negative {
+        color: var(--point-pink-color);
+      }
+      .btn-negative:hover {
+        color: #fff;
+        background-color: var(--point-pink-color);
+      }
+
+      .btn-dis:disabled {
+        color: var(--disable-color);
+        text-decoration: none;
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn-wrap">
+      <button type="button">Button</button>
+      <button type="button">Yes</button>
+      <button type="button">Del</button>
+      <button type="button" disabled>Button</button>
+    </div>
+
+    <div class="btn-wrap-class">
+      <button type="button" class="btn-basic">Button</button>
+      <button type="button" class="btn-positive">Yes</button>
+      <button type="button" class="btn-negative">Del</button>
+      <button type="button" class="btn-dis" disabled>Button</button>
+    </div>
+  </body>
+</html>
