@@ -11,57 +11,111 @@ header {
 }
 main {
   display: grid;
-  /* width: 100vw;
-  height: 100vh; */
-  width: 60%;
+  width: 80%;
   margin: auto;
   background-color: #eee;
   border: 1px solid #e1e1e1;
   border-radius: 20px;
   gap: 20px;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: column;
   padding: 20px;
-  /* grid-template-rows: 1fr 5fr 3fr 4fr 4fr 4fr; */
+  background: #eee;
 }
 
-main > section > * {
-  border-radius: 20px;
-  padding: 30px;
-  background-color: #fff;
-}
-/* 
-article.ad {
-  grid-row: 1/3;
-}
+main > * {
+  border: 1px solid;
+  border-radius: 1rem;
 
-aside.login {
-  grid-row: 1/3;
+  padding: 1rem;
 }
-
-section.news {
-  grid-row: 3/7;
+#left {
+  border: solid 2px #e1e1e1;
+  grid-column: 1/2;
 }
-
-article.news-sub {
-  grid-row: 7/10;
+#right {
+  border: solid 2px #e1e1e1;
+  grid-column: 2/3;
 }
-
-section.enter-news {
-  grid-row: 10/16;
+.ad {
+  grid-row: span 2;
+}
+.news {
+  grid-row: span 7;
+}
+.news-sub {
+  grid-row: span 4;
 }
 
-section.sports-news {
-  grid-row: 17/38;
-} */
+.enter-news {
+  grid-row: span 6;
+}
 
-/* 
-aside.ad2 {
-  grid-row: 4/6;
-} */
+.ad3 {
+  grid-row: span 2;
+}
 
-main > section.left-content,
-.right-content {
-  display: grid;
-  gap: 20px;
-  grid-template-rows: repeat(3, 1fr 3fr);
+.sports-news {
+  grid-row: span 6;
+}
+
+.cafe-story {
+  grid-row: span 6;
+}
+
+.hot-topic {
+  grid-row: span 6;
+}
+
+.shopping-hotdeal {
+  grid-row: span 4;
+}
+
+.login {
+  grid-row: span 2;
+}
+
+.weather {
+  grid-row: span 1;
+}
+
+.ad2 {
+  grid-row: span 4;
+}
+
+.shopping {
+  grid-row: span 7;
+}
+
+.stock {
+  grid-row: span 2;
+}
+
+.short-video {
+  grid-row: span 7;
+}
+
+.hot-deal {
+  grid-row: span 5;
+}
+
+.ad4 {
+  grid-row: span 4;
+}
+
+.game {
+  grid-row: span 5;
+}
+
+.donation {
+  grid-row: span 3;
+}
+
+.enter-rank {
+  grid-row: span 3;
+}
+
+.today-photo {
+  grid-row: span 4;
 }
