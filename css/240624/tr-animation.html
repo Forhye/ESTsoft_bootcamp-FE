@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시계만들기</title>
+
+    <!--css-->
+    <style>
+      @keyframes clock {
+        /* from-to 사이에 퍼센트(%)를 끼울수 있다 */
+        0% {
+          transform: rotate(180deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+          /* transform: rotate(1turn); */
+        }
+      }
+      article {
+        position: relative;
+
+        width: 400px;
+        height: 400px;
+        background-color: royalblue;
+        border-radius: 30%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      article > div {
+        position: absolute;
+        top: 200px;
+        left: 200px;
+
+        transform-origin: center top;
+
+        width: 10px;
+        height: 150px;
+      }
+
+      .stick1 {
+        background-color: rgb(188, 188, 188);
+        opacity: 40%;
+        animation: clock 60s infinite steps(60);
+      }
+
+      .stick2 {
+        background-color: black;
+        animation: clock 120s infinite;
+      }
+
+      .stick3 {
+        height: 100px;
+        background-color: #ffb000;
+        animation: clock 240s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <div class="stick1"></div>
+      <div class="stick2"></div>
+      <div class="stick3"></div>
+    </article>
+  </body>
+</html>
