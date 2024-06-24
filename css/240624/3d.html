@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3d</title>
+
+    <!--css-->
+    <style>
+      /* @keyframes turn-box {
+        from {
+          transform: rotateY(0deg);
+        }
+
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+      button.ani {
+        width: 300px;
+        height: 100px;
+        background-color: darkgreen;
+        border-radius: 50%;
+        border: none;
+        transform: rotateY(45deg);
+        animation: turn-box 1s infinite;
+      } */
+
+      button {
+        width: 100px;
+        height: 100px;
+        background-color: darkgreen;
+        border: none;
+
+        /* 자식인 각각한테 소실점을 줬다 */
+        transform: perspective(500px) rotateY(90deg);
+      }
+
+      div {
+        /* 가운데 정렬을 해주지 않으면 소실점이 정확하지 않다. */
+        display: flex;
+        justify-content: center;
+
+        /* 부모에게 준 방법 | 자식에게 줄때는 transform:perspective(); */
+        /* perspective: 500px; */
+
+        /* 소실점이 가운데 위 */
+        perspective-origin: center top;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button>this is button</button>
+      <button>this is button</button>
+      <button>this is button</button>
+      <button>this is button</button>
+      <button>this is button</button>
+      <!-- <button class="ani">this is button</button> -->
+    </div>
+  </body>
+</html>
