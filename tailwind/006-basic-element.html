@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- https://tailwindcss.com/docs/margin -->
+    <!-- https://tailwindcss.com/docs/padding -->
+    <!-- https://tailwindcss.com/docs/font-weight -->
+    <!-- https://tailwindcss.com/docs/text-color -->
+
+    <div>hello world</div>
+    <div class="text-base">hello world</div>
+    <div class="text-lg">helloworld</div>
+    <div class="text-xl">helloworld</div>
+    <div class="text-2xl">helloworld</div>
+
+    <div class="text-2xl p-4 bg-red-200">helloworld</div>
+    <div class="text-2xl pt-4 bg-indigo-200">helloworld</div>
+    <div class="text-2xl pb-4 bg-blue-200">helloworld</div>
+    <div class="text-2xl pl-4 bg-blue-300">helloworld</div>
+    <div class="text-2xl pr-4 bg-blue-300">helloworld</div>
+
+    <div class="text-2xl m-4 bg-gray-300">helloworld</div>
+    <div class="text-2xl mb-4 bg-gray-500">helloworld</div>
+    <div class="text-2xl mt-4 bg-gray-400">helloworld</div>
+
+    <hr />
+
+    <div class="mb-3 bg-red-200">hello world</div>
+    <div class="mb-3 bg-red-200">hello world</div>
+    <div class="mb-3 bg-red-200">hello world</div>
+
+    <div class="bg-blue-200">hello world</div>
+    <div class="my-3 bg-blue-200">hello world</div>
+    <div class="bg-blue-200">hello world</div>
+
+    <div class="space-y-4">
+      <div class="bg-blue-200">hello world</div>
+      <div class="bg-blue-200">hello world</div>
+      <div class="bg-blue-200">hello world</div>
+    </div>
+
+    <div class="space-x-4">
+      <span class="bg-indigo-400">hello world</span>
+      <span class="bg-indigo-400">hello world</span>
+      <span class="bg-indigo-400">hello world</span>
+
+      <!-- https://tailwindcss.com/docs/list-style-type -->
+    </div>
+
+    <div class="p-5">
+      <ul>
+        <li class="list-disc">hello world</li>
+        <li class="list-disc">hello world</li>
+        <li class="list-disc">hello world</li>
+      </ul>
+    </div>
+
+    <!-- 패딩값과 리스트스타일을 같이 써줘야 먹힌다 set! -->
+
+    <div>
+      <ul>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+      </ul>
+    </div>
+
+    <div class="p-5">
+      <!-- list-decimal은 ol에 써야해서 시멘틱하지 않음 -->
+      <ul>
+        <li class="list-decimal">hello world</li>
+        <li class="list-decimal">hello world</li>
+        <li class="list-decimal">hello world</li>
+      </ul>
+    </div>
+
+    <div>
+      <ol>
+        <li class="list-decimal list-inside">hello world</li>
+        <li class="list-decimal list-inside">hello world</li>
+        <li class="list-decimal list-inside">hello world</li>
+      </ol>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <div class="w-40 h-40 bg-red-200"></div>
+    <div class="w-40 h-40 bg-blue-200 rounded"></div>
+    <div class="w-40 h-40 bg-blue-200 rounded-lg"></div>
+    <div class="w-40 h-40 bg-blue-200 rounded-full"></div>
+    <div class="w-40 h-40 bg-blue-200 rounded-[12px]"></div>
+
+    <!-- https://tailwindcss.com/docs/border-radius -->
+    <!-- https://tailwindcss.com/docs/border-width -->
+    <div class="space-y-4">
+      <div class="border">hello world</div>
+      <div class="border">hello world</div>
+      <div class="border">hello world</div>
+      <div class="border border-red-400">hello world</div>
+      <div class="border-t-4 border-blue-400">hello world</div>
+      <!-- ↓ 항목 만들때 많이 씀 -->
+      <div class="border-l-4 border-blue-400">hello world</div>
+      <div class="border-r-4 border-blue-400">hello world</div>
+      <!-- ↓ 2개 자주 안씀 -->
+      <div class="border-x-4 border-blue-400">hello world</div>
+      <div class="border-y-4 border-blue-400">hello world</div>
+    </div>
+
+    <!-- https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values -->
+    <div class="text-[17px]">hello world</div>
+    <div class="mt-[17px]">hello world</div>
+    <div class="bg-[#4267B2]">facebook</div>
+  </body>
+</html>
