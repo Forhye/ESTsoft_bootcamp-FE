@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <!--css-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <img
+      srcset="gary1.png, gary2.png 2x, gary3.png 3x"
+      src="gary1.png"
+      alt="개발자 개구리 개리"
+    /> -->
+
+    <!-- 소스셋 사이즈즈 같이 씀 더블유 서술자 쓸때만 적용됨 -->
+    <!-- max-width : 360 이하라면 이미지를 200px로 -->
+    <img
+      srcset="gary1.png 500w, gary2.png 1000w, gary3.png 2000w"
+      sizes="
+        (max-width: 360px) 200px, 
+        (max-width: 720px) 400px,
+        600px"
+      src="gary1.png"
+      alt="개발자 개구리 개리"
+    />
+  </body>
+</html>

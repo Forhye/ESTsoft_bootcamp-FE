@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <!--css-->
+  </head>
+  <body>
+    <picture>
+      <!-- 최소 너비가 1024 이상인 경우
+    최대 너비가 1024 이하인 경우 -->
+      <source media="(min-width: 1024px)" srcset="wenivFriends_wide.png" />
+      <!-- 없어도 작동하지만 명시적으로 남겨두는게 좋다 -->
+      <source media="(max-width: 1023px)" srcset="wenivFriends.png" />
+      <!-- 폴백 코드(위에 코드가 읽히지 않을 경우 아래 이미지를 랜더링 해줘야 하기 때문) -->
+      <img src="wenivFriends.png" alt="" />
+    </picture>
+  </body>
+</html>
