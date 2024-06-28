@@ -1,6 +1,17 @@
 body {
   background-color: #eee;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  clip: rect(0 0 0 0);
+}
 
 header {
   width: 100vw;
@@ -9,6 +20,59 @@ header {
 
   /* background-color: aquamarine; */
 }
+
+.search-wrap {
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: ;
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.search-wrap > .search-box {
+  position: relative;
+  z-index: 0;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -20%;
+    top: -200%;
+    width: 800px;
+    height: 800px;
+    background-color: #de9696;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#de9696, #de9696),
+      linear-gradient(#ffc541, #ffc541), linear-gradient(#b788df, #b788df),
+      linear-gradient(#739cfa, #739cfa);
+    animation: rotate 0.5s linear infinite;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 10px;
+  }
+}
+
 main {
   display: grid;
   width: 80%;
@@ -23,7 +87,7 @@ main {
 }
 
 main > * {
-  border: 1px solid #e1e1e1;
+  /* border: 1px solid #e1e1e1; */
   border-radius: 1rem;
 
   padding: 1rem;
