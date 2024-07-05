@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>콘솔창</title>
+
+    <!--css-->
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // 스크립트 에밋 : script:src
+      // 콘솔 : 디버깅(오류를 없애는 일)이나 로그, 코드 순서를 확인하기 위한 기능
+      console.log("로그입니다"); // 세미콜론의 역할 : 코드의 문장을 끝낸다
+      console.error("오류입니다"); // 에러메세지
+      console.warn("경고입니다"); // 경고메세지
+
+      console.table([1, 2, 3, "a", "b", "c"]);
+      // 배열 형태 : 콘솔창에 표로 인덱스와 함께 나타냄
+      // 배열은 index 값(순서), 객체는 key 값(키워드)
+      console.table({ name: "경현", company: "위니브" });
+      // 객체형태 : key : value
+
+      // 타이머 체크
+      console.time("start");
+      console.log(1, 2, 3);
+      console.time("end"); // 타이머 시작
+      console.timeEnd("start");
+      console.timeEnd("end"); // 타이머 끝 뒤에 이름을 똑같이 맞춰줘야한다
+    </script>
+  </body>
+</html>
