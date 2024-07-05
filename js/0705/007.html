@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <!--css-->
+  </head>
+  <body>
+    <script>
+      // 변수=포스트잇이다
+
+      // 변수 선언
+      // 변수 키워드 - var, let, const
+      var a;
+      //   let b;
+
+      //변수 할당
+      let b = 10; // 선언 + 할당 (초기화)
+
+      const name = "weniv";
+      // const는 선언과 할당을 동시에 해줘야 한다, 재할당이 불가능하다
+      // 주소가 변할 수 없다 현재 코드에서는 변할 수 없는 값
+      // 그런데 변할 수 있는 값이 있기도 한다
+
+      //변수 할당 2 (재할당)
+      //변수 = 값;
+      a = 30;
+      b = 20;
+      //   name = "hello";
+      //TypeError: Assignment to constant variable.
+      //const로 선언한 변수는 재할당이 불가합니다. 라는 오류메세지
+
+      // 변수 참조 : 변수를 찾는다
+      console.log(a);
+      console.log(b);
+      console.log(name);
+      console.log(c); //오류발생 ReferenceError: c is not defined => c가 어디있는지 모르겠어
+
+      // 타입스크립트에서는 name이라는 변수명을 쓰지 말라고하는데
+      // 이게 자바스크립트에도 적용이 되어서 왠만하면 name 은 쓰지 않는걸로
+    </script>
+  </body>
+</html>
