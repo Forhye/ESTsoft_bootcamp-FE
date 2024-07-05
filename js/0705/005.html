@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>콘솔 스타일 feat : 아스키코드</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <script>
+      // 백틱 안에 백틱이 있으면 \ 넣으면 된다
+      // 엔터는 \n
+      // 백틱은 \`
+      console.log(`^   ^
+      👀
+      ⚫
+      👅
+      
+      `);
+
+      // %c 색상 넣기
+      console.log(
+        `%c
+            ╱|、♡
+            (\` -7
+            |、⁻〵
+            じしˍ,)ノ
+        `,
+        "color:royalblue"
+      );
+
+      console.log(
+        "%chan %cgarden",
+        "color:pink;font-size:24px;",
+        "color:royalblue"
+      );
+    </script>
+  </body>
+</html>
