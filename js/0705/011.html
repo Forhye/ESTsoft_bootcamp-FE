@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수 키워드 별 특징</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <script>
+      // "use strict";
+      // 변수 키워드 별 특징
+      // var, let, const
+
+      // a = 10;
+      // var a = 10; 와 같음
+      // 키워드 없이 선언+할당이 가능하다 / 코드의 위험을 높임 권장X
+      // 옛날 코드들 중에서 이렇게 사용하고 있는 곳이 있어서
+      // 오류로 만들지 못하고 유지하고 있음
+      // 자바스크립트 엄격모드 "use strict"; 스크립트 상단에 선언해주면
+      // 오류로 인식해줌
+
+      // 재선언 : var 에서만 가능
+      var name = "지혜";
+      console.log(name);
+      var name = "hye's";
+      console.log(name);
+
+      // let은 재선언이 불가 (const도!)
+      // let name1 = "지혜";
+      // let name1 = "hye;s";
+
+      // 재할당
+      var x = 10;
+      x = 20;
+
+      let y = 30;
+      y = 40;
+
+      // const는 재할당이 불가하다
+      // 에러 메세지 :TypeError: Assignment to constant variable.
+      const z = 50;
+      z = 60;
+    </script>
+  </body>
+</html>
