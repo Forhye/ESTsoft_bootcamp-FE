@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>원시타입-string</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <script>
+      // 문자열
+      // '', "", `` 으로 감싸진 텍스트
+      // 엔터(개행) 표현할 수 없다 / 오류 발생
+
+      let str1 = "hello world";
+      let str2 = "hello \n world";
+      let str2_1 = "hello' world";
+      let str3 = `hello
+      world`;
+      // 엔터(개행) 표현이 가능하다.
+      // 이스케이프 문자 : '' 안에 '를 쓰려면 \백슬래시를 써주면된다
+      // https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String#%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84_%ED%91%9C%ED%98%84
+
+      console.log(str1);
+      console.log(str2);
+      console.log(str3);
+
+      console.log(typeof str1);
+      console.log(typeof str2);
+      console.log(typeof str3);
+
+      const a = 10;
+      const b = 20;
+      console.log(a, "+", b, "=", a + b);
+      console.log(a + "+" + b + "=" + (a + b));
+
+      console.log(`${a}+${b}=${a + b}`); // 템플릿 리터널
+      console.log(`안녕하세요 10더하기20은 ${a + b}입니다`);
+      console.log(`안녕하세요 ${"가나다"}입니다`);
+      console.log(`안녕하세요 ${20}입니다`);
+
+      //----------------------문자열의 특징
+      let greeting = "hello world";
+      // 순서가 있다, 0부터 시작하고 이 순서 값을 인덱스라고한다
+
+      console.log(greeting[0]);
+      console.log(greeting[11]); // 인덱스가 없는 값은 undefined
+
+      //[] 로는 음수 인덱스로 접근이 불가능하다
+      console.log(greeting[-1]); // undefined
+      console.log(greeting.at(-1)); // d가 출력 끝에서부터 -1~
+
+      console.log("문자열의 길이 : ", greeting.length);
+      console.log(greeting[greeting.length - 1]); // 문자열 길의의 마지막 첫번째 글자
+
+      greeting[5] = "k";
+      console.log(greeting);
+      // 원시타입이기 때문에 한번 만들어진 문자열은 절대 바뀌지 않는다
+      // 문자열의 불변성을 위해서 js는 57번 줄 코드를 실행하지 않는다.
+      // 엄격모드를 선언해주면 57번줄 코드는 오류로 뜬다.
+      // read only 타입이라서
+
+      let greeting2 = "안녕하세요";
+      let company = "weniv";
+      console.log(greeting2 + company);
+      console.log("안녕하세요weniv" === greeting2 + company); //true
+
+      //,(콤마)는 각각 하나씩 출력 ex) "10" "+" "20" "=" "30"
+      //+(플러스)는 문자열을 이어줌 ex) 10+20=30
+    </script>
+  </body>
+</html>
