@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자열 메소드</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <script>
+      //숫자형
+      // 64비트를 이용해서 값을 표현하고
+      // 움직이는 수소점 부동소수점 형식
+
+      // 1bits 숫자의 부호 양수(+)인지 음수(-)인지
+      // 11bits 소수점
+      // 52bits 유효숫자 숫자의 정확도
+
+      let num1 = 1;
+      let num2 = 3.2;
+
+      console.log(0.1 + 0.2);
+      // 0.3이 아니라
+      // 숫자를 저장하는 형식 때문
+      // 10진수의 소수를 2진수로 전환하는 과정에서 무한소수화가 되면서 오차가 발생한다.
+      // 그래서 0.3과 가장 가까운 수를 출력한다
+      // 반올림, 소수점을 지정하는 처리 / 라이브ㄹ러리 (Decimal.js)
+
+      // 자바스크립트에서 안전하게 사용할 수 있는 숫자
+      console.log(Number.MAX_SAFE_INTEGER); //가장 큰 수
+      console.log(Number.MIN_SAFE_INTEGER); //가장 작은 수
+      // 위 외 더 크거나 작은 숫자를 출력(표현)은 할 수 있지만
+      // 안전하게 표현이 불가하다
+
+      console.log("---------------다양한 연산");
+      const a = 10;
+      const b = 3;
+      console.log(`${a} + ${b} = ${a + b}`);
+      console.log(`${a} - ${b} = ${a - b}`);
+      console.log(`${a} * ${b} = ${a * b}`);
+      console.log(`${a} / ${b} = ${a / b}`);
+      console.log(`${a} % ${b} = ${a % b}`);
+      console.log(`${a} ** ${b} = ${a ** b}`); // 제곱
+      console.log(`${16} ** ${0.5} = ${16 ** 0.5}`); // 제곱근
+
+      console.log("---------------단항연산");
+      // 연산자와 피연사자가 1개씩
+      console.log(`-${a} = ${-a}`); // -10 = -10 =>문자열
+      console.log(`-(-${a}) = ${-(-a)}`);
+      //- * - = + / ${} 안에있는 애들은 계산(기능)을 먼저 한다
+      // 저 밖에서 나오면 다 문자가 된다.
+      console.log(+"4"); //타입을 숫자로 변환
+
+      console.log("---------------증감연산");
+      let num = 3;
+      console.log("num++ ->", num++);
+      console.log(num);
+      console.log("++num ->", ++num);
+
+      console.log("--num ->", --num);
+      console.log("num-- ->", num--);
+
+      console.log("---------------특수한 값");
+      console.log("infinity 1/0 =>", 1 / 0);
+      console.log("-infinity -1/0 =>", -1 / 0);
+
+      //e : 10의 거듭제곱을 표현할 수 있습니다.
+      console.log(3e10); // 3*10^10 10승
+      console.log(2e-2); // 2*10^(-2)
+
+      //NaN(Not a Number)
+      console.log("NaN의 타입", typeof NaN);
+      // 숫자 연산이 불가능할때
+      console.log("hello" * 2);
+    </script>
+  </body>
+</html>
