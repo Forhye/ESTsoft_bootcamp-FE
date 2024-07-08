@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자열 메소드</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <script>
+      // 문자열 탐색
+      const string = "hello world, hello weniv";
+
+      console.log("---------------IndexOf");
+      console.log(string.indexOf("hello"));
+      // 첫번째로 발견한 문자열의 인덱스를 출력된다.
+      // 찾으면 종료되기 때문에 뒤 hello는 읽지 않는다.
+      console.log(string.indexOf("weniv"));
+      console.log(string.indexOf("hye")); // 없으면 -1을 출력
+      console.log(string.indexOf("hello", 5)); // 5부터 시작
+
+      console.log("---------------lastIndexOf");
+      console.log(string.lastIndexOf("hello")); // 탐색 시작 위치가 뒤에서 시작됨
+      console.log(string.lastIndexOf("weniv"));
+      // 탐색하는 요소의 인덱스가 변하지는 않는다.
+      console.log(string.lastIndexOf("hye"));
+      console.log(string.lastIndexOf("hello", 12));
+
+      console.log("---------------includes"); // 포함 여부를 참/거짓으로 알려줌
+      console.log(string.includes("hello"));
+      console.log(string.includes("Hello"));
+
+      console.log("---------------match");
+      // g는 global / / 정규표현식 "" 문자열이 들어간다
+      // log(string.match("H"))로 써도
+      // log(string.match(/H/))으로 자동으로 바꿔서 실행됨
+      console.log(string.match(/[A-z]/g)); // 인덱스값 X
+      console.log(string.match(/[A-z]/)); // 인덱스값 O
+      console.log(string.match(/[0-9]/)); // 숫자
+      console.log(string.match(/[가-힣]/)); // 한글
+      // 일지하지 않는 값은 null(비어있는 값)
+
+      console.log("---------------substring");
+      //문자열의 일부를 가져온다
+      //시작 인덱스 <= x < 종료 인덱스
+      const str2 = "hello weniv~";
+      console.log(str2.substring(0, 5));
+      // 가져오려는 인덱스의 다음번호를 넣어주어야 그 앞까지 가져온다
+      console.log(str2.substring(6, 11));
+      console.log(str2.substring(6, str2.length - 1));
+      console.log(str2.substring(6)); //종료 인덱스를 안적어주면 자동으로 끝까지 출력해줌
+      console.log(str2.substring()); //둘다 안써주면 모든 문자가 나옴
+
+      console.log(str2.substring(-2, 5));
+      console.log(str2.substring("hello"));
+      //   음수나 숫자가 아닌 값이 들어왔을때 0으로 처리한다.
+      // 인덱스의 시작이 종료보다 클 경우 위치를 서로 바꿔서(치환) 출력
+
+      console.log("---------------slice");
+      //시작, 종료 인덱스를 받음 / 종료 인덱스 전까지 출력
+      console.log(str2.slice(0, 5)); //0부터 5
+
+      //substring 과의 차이점
+      console.log(str2.slice(6, -1)); //음수 인덱스를 허용
+      console.log(str2.slice(2, "hello")); //문자열은 0으로 처리 slice(2,0);
+      // 인덱스의 시작이 종료보다 커도 치환되지 않기 때문에 빈 문자열로 반환된다.
+
+      console.log("---------------substr");
+      //추후 웹표준에서 제거될 가능성이 커서 사용을 지양
+      //두번째는 뽑아낼 길이
+      console.log(str2.substr(6, 5)); //6번째부터 5개의 길이만큼 뽑아줘
+      console.log(str2.substr(6)); // 길이가 없으면 문자열의 끝까지
+
+      console.log(str2.substr(6, 0));
+      console.log(str2.substr(6, -1)); // 음수나 0이면 빈 문자열
+
+      console.log("---------------split");
+      //문자열을 쪼개는 메서드
+      const phonenumber = "010-4444-8888";
+      console.log(phonenumber.split("-"));
+      console.log("apple".split("")); //모든 요소를 다 잘라낸다
+      console.log("apple".split("", 2)); //2개만 출력하고 끝낸다
+
+      console.log("---------------replace");
+      //문자열을 바꾸는 메서드 - 원래의 값을 바꾸는 것이 X
+      //새로운 값을 반환하게 된다.
+      const str3 = "hello world! hello weniv!";
+      console.log(str3.replace("hello", "hi"));
+      console.log(str3);
+      console.log(str3.replace(/hello/g, "hi")); //g로 인해 모든 hello가 hi로 바뀜
+      console.log(str3.replaceAll("hello", "hi"));
+
+      console.log("---------------toUpperCase");
+      const search = "JavasCript";
+      console.log(search.toUpperCase()); // 전체 대문자
+      console.log(search.toLowerCase()); // 전체 소문자
+
+      console.log("---------------repeat");
+      //문자열의 반복
+      console.log("*".repeat(5));
+
+      console.log("---------------trim");
+      //양 옆 공백
+      //문자열 시작과 끝
+      console.log("         hello world     ".trim()); //공백이 사라짐
+
+      console.log("---------------padStart/End");
+      //3시 => 03시
+      console.log("3".padStart(2, "0"));
+      console.log("12".padStart(2, "0"));
+      // 내가 지정한 자리수 만큼 뒷 문자열을 추가하고
+      // 자리수가 넘으면 생략(넣지않음)
+
+      console.log("12".padEnd(5, "0"));
+      console.log("12".padEnd(5, "-"));
+      //12를 5자리로 반들고 나머지는 "0"으로 채웁니다.
+    </script>
+  </body>
+</html>
