@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>호이스팅 2</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <script>
+      // 모든 변수의 선언문은 호이스팅이 된다.
+
+      let a; // undefined
+      console.log(a); // ------------------------a의 TDZ
+
+      console.log(b); // 아직 b의 할당값을 모른다 -> 오류
+      let b = 10; // ----------------------------b의 TDZ
+    </script>
+  </body>
+</html>
