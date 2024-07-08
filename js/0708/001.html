@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>호이스팅</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <script>
+      console.log(a);
+      var a = 10;
+
+      /*
+      console.log(a);
+      var a = 10;
+
+      =
+      var a; // 선언문을 먼저 끌어올려 읽음
+             // 기본값이 undefined가 할당되어 있기 때문에 /undefined로 초기화됨
+      console.log(a); // 오류가 나지 않고 undefined가 출력됨
+      a = 10; // 할당은 읽지 못함
+      var는 TDZ가 없다 */
+
+      console.log(b);
+      let b = 20;
+
+      /*
+      let과 const는 값을 undefined로 초기화하지 않는다
+      그래서 호이스팅되었을때 오류가 난다. (할당값이 없기 때문)
+      TDZ 일시적 사각지대
+
+      호이스팅이 되었을 때 예기치 못한 결과를 방지하기 위해서
+      */
+    </script>
+  </body>
+</html>
