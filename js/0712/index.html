@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js 심화</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <button id="btn">Click me!</button>
+
+    <script>
+      const button = document.getElementById("btn");
+      button.addEventListener("click", function () {
+        console.log(this);
+      });
+
+      // const button에 html의 id=btn을 넣었고
+      // 버튼을 클릭했을때 함수 안 console.log(this)를 호출
+      // this는 button에 있기때문에 id=btn 의 요소가 나온다?
+    </script>
+    <!-- <script src="./001.js"></script> -->
+    <!-- <script src="./002.js"></script> -->
+    <!-- <script src="./003.js"></script> -->
+    <script src="./004.js"></script>
+    <!-- <script src="./005.js"></script> -->
+  </body>
+</html>
