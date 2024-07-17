@@ -7,3 +7,6 @@
 
 // parse stringify ★★★
 // 통신을 할때 무자열로 하기 때문에 스트링기파이
+
+// JSON 기본 자료형
+// Number, String, Boolean, Array, Object, Null(undefined XXX 다른 언어에는 없음)
