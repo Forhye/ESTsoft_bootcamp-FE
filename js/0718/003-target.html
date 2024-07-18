@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>target</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <article class="parent">
+      <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button type="button">버튼2</button></li>
+        <li><button type="button">버튼3</button></li>
+      </ol>
+    </article>
+
+    <script>
+      // 클릭이 된 애 target
+      // 이벤트가 등록된 애 currentTarget
+      const parent = document.querySelector(".parent");
+      parent.addEventListener("click", function (event) {
+        console.log(event.target, "target");
+        console.log(event.currentTarget, "currentTarget");
+      });
+    </script>
+  </body>
+</html>
