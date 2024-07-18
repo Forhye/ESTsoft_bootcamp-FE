@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 this</title>
+
+    <!--css-->
+  </head>
+  <body>
+    <article class="parent">
+      <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button type="button">버튼2</button></li>
+        <li><button type="button">버튼3</button></li>
+      </ol>
+    </article>
+
+    <script>
+      // function을 선언해준 일반 함수는 이벤트를 사용하면 this가
+      // 상위 객체인 parent 즉 article을 가르키게 됨
+      const parent = document.querySelector(".parent");
+      parent.addEventListener("click", function (event) {
+        console.log(this);
+      });
+
+      // 화살표함수로 이벤트를 사용하면 this가 window를 가르킨다.
+      const parent1 = document.querySelector(".parent");
+      parent.addEventListener("click", (event) => {
+        console.log(this);
+      });
+
+      const myObj = {
+        name: "jaehyun",
+        walk() {
+          parent.addEventListener("click", () => {
+            // 생성되는 시점
+            // 화살표함수에서는 currentTarget을 쓰면 된다
+            console.log(this); // 현재 실행되고 있는 객체 myObj가 나옴
+            console.log(this.name + " is walking");
+          });
+        },
+      };
+    </script>
+  </body>
+</html>
