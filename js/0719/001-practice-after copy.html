@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0718(어제) 실습</title>
+
+    <!--css-->
+    <style>
+      p:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>나의 todo list</h1>
+    <label for="getTodayTodo">
+      <input type="text" />
+    </label>
+    <button type="button" class="todoBtn">오늘의 Todo 등록</button>
+
+    <div class="mokdata">
+      <p>
+        1. 오늘 저녁에는 부대찌개를 끓여 먹겠다.
+        <button type="button" class="delBtn">삭제</button>
+      </p>
+      <p>
+        2. 후식으로 슈팅스타를 먹겠다.
+        <button type="button" class="delBtn">삭제</button>
+      </p>
+      <p>
+        3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.
+        <button type="button" class="delBtn">삭제</button>
+      </p>
+    </div>
+
+    <script>
+      // P 태그를 클릭하면 p 태그의 컨텐츠를 출력하는 alert 창을 띄워주고
+      // p태그 클릭하기
+      // p태그들 선택하기
+      const contents = document.querySelectorAll("p");
+      console.log(contents);
+
+      // p태그들을 모은 NodeList에서 forEach를 통해 p 개별 선택하기
+      contents.forEach((content) => {
+        console.log(content);
+        // p태그에 클릭 이벤트 추가
+        content.addEventListener("click", function () {
+          // 클릭이 잘 됨을 확인
+          console.log(content);
+          // alert창 띄우기
+          alert(content.textContent);
+        });
+      });
+
+      // 삭제 버튼을 클릭하면 삭제할 것인지를 물어보는 confirm 창을 띄워주고, 확인을 누르면 P태그를 삭제합니다.
+      //삭제 버튼 가져오기
+      const delButtons = document.querySelectorAll("button");
+      // button태그들을 모은 NodeList에서 forEach를 통해 button 개별 선택하기
+      delButtons.forEach((button) => {
+        console.log(button);
+        // button에 클릭 이벤트 추가
+        button.addEventListener("click", function (e) {
+          // 클릭이 잘 됨을 확인
+          console.log(button);
+          // alert창 띄우기
+          e.stopPropagation(); // p태그가 같이 나오는걸 방지 해줬다
+
+          // 조건에 따라
+          // p태그를 삭제해야한다
+          if (confirm("정말 삭제하시겠습니까?")) {
+            // 버튼의 부모요소(p) 선택하기
+            const parent = button.parentElement;
+            parent.remove();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
