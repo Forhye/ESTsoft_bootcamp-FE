@@ -21,15 +21,16 @@ $todoBtn.addEventListener("click", function () {
   newBtn.innerText = "삭제";
   newBtn.className = "delBtn";
 
-  newP.setAttribute("listNum", index); // index를 listNum에 넣는다
-
   createIndex.className = "index";
-  createIndex.innerText = `${index}`;
+  createIndex.innerText = ++index;
 
   newP.appendChild(createIndex);
-  newP.innerText = $input.value;
+  newP.appendChild(document.createTextNode(`. ${$input.value} `));
   newP.appendChild(newBtn);
+  newP.setAttribute("listNum", index); // index를 listNum에 넣는다
   $mokdata.appendChild(newP);
+
+  $input.value = "";
 });
 
 $mokdata.addEventListener("click", function (e) {
@@ -56,13 +57,12 @@ function updateIndex(num) {
   $p.forEach((item) => {
     let index = parseInt(item.getAttribute("listNum"));
     if (index > num) {
-      item.querySelector();
       const newIndex = index - 1;
       item.setAttribute("listNum", newIndex);
-      console.log(typeof index);
-      console.log(newIndex);
+      item.querySelector(".index").innerText = newIndex;
     }
   });
+  index = $p.length;
 }
 
 // 삭제되었을 때.
