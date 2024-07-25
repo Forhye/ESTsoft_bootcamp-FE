@@ -17,13 +17,17 @@ const $button = document.querySelector("button");
 const $ul = document.querySelector("ul");
 const $form = document.querySelector("form");
 
+const createTodoUi = (todoData) => {
+  const $li = document.createElement("li");
+  $li.textContent = item.todo;
+  $ul.appendChild($li);
+};
+
 const fetchTodos = async function () {
   const res = await fetch("http://localhost:3000/todos");
   const json = await res.json();
-  json.forEach((item) => {
-    const $li = document.createElement("li");
-    $li.textContent = item.todo;
-    $ul.appendChild($li);
+  json.forEach((todoData) => {
+    createTodoUi(todoData);
   });
 };
 fetchTodos();
@@ -38,10 +42,8 @@ const addTodo = async function (todoTxt) {
       },
       body: JSON.stringify({ todo: todoTxt, done: false }),
     });
-    const newPost = await req.json();
-    const $li = document.createElement("li");
-    $li.textContent = newPost.todo;
-    $ul.appendChild($li);
+    const newTodoData = await req.json();
+    createTodoUi(newTodoData);
   } catch (error) {
     alert("서버에 이상이 있다.");
   } finally {
