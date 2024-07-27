@@ -21,13 +21,13 @@
       // 상위 객체인 parent 즉 article을 가르키게 됨
       const parent = document.querySelector(".parent");
       parent.addEventListener("click", function (event) {
-        console.log(this);
+        console.log(event);
       });
 
       // 화살표함수로 이벤트를 사용하면 this가 window를 가르킨다.
       const parent1 = document.querySelector(".parent");
       parent.addEventListener("click", (event) => {
-        console.log(this);
+        console.log(event);
       });
 
       const myObj = {
