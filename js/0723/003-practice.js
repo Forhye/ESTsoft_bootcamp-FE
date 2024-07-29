@@ -50,7 +50,7 @@ req
     });
   });
 
-// 클로드 최적화
+// 최적화
 async function fetchAndDisplayUsers() {
   try {
     const res = await fetch("https://koreanjson.com/users");
@@ -82,34 +82,3 @@ async function fetchAndDisplayUsers() {
 }
 
 fetchAndDisplayUsers();
-
-// const req2 = fetch("https://test.api.weniv.co.kr/mall");
-// req2
-//   .then((res) => {
-//     // const data = res.json();
-//     return res.json();
-//   })
-//   .then((value) => {
-//     const data = value;
-//     const $ol = document.createElement("ol");
-//     data.forEach((value) => {
-//       let $li = document.createElement("li");
-//       let $span = document.createElement("span");
-//       let $img = document.createElement("img");
-
-//       $li.id = value.id;
-//       $li.textContent = value.productName;
-//       $span.textContent = value.modDate;
-//       $img.src = "https://test.api.weniv.co.kr/" + value.thumbnailImg;
-//       $img.style.width = "100px";
-
-//       $li.append($img, $span);
-//       $ol.appendChild($li);
-//     });
-//     document.body.appendChild($ol);
-//     return value; // 필요할 때 넣기 , 추후에 뭔가 요청해야 할 때
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//     return err; // 필요할 때 넣기
-//   });
