@@ -265,3 +265,674 @@ function solution(data) {
   return result;
 }
 ```
+
+## 워밍업 문제4
+
+- 문제이름 : 평균점수 카운팅
+- 링크 :
+
+```js
+function solution(data) {
+  let result = 0; // 80점 이상인 학생 수
+  data.forEach((v) => {
+    let mean = 0; // 각 학생의 평균
+    v.forEach((i) => {
+      mean += i;
+    });
+    mean /= v.length;
+    if (mean >= 80) {
+      result++;
+    }
+  });
+  return result;
+}
+
+solution([
+  [92, 85, 97],
+  [30, 21, 60],
+  [90, 99, 98],
+  [0, 0, 0],
+  [81, 80, 88],
+]);
+```
+
+```js
+function solution(data) {
+  let avg;
+  let result;
+
+  result = data.filter((v) => {
+    avg = v.reduce((a, c) => a + c, 0) / v.length;
+    return avg >= 80;
+  }).length;
+  return result;
+}
+
+solution([
+  [92, 85, 97],
+  [30, 21, 60],
+  [90, 99, 98],
+  [0, 0, 0],
+  [81, 80, 88, 20],
+]);
+```
+
+## 워밍업 문제5
+
+- 문제이름 : 비트치환문제
+- 링크 : https://100.jsalgo.co.kr/?page=30#
+
+```js
+//  9.toString() => .을 소수점으로 인식하기 때문에 아래처럼 사용해야함
+//  (9).toString()
+
+// let a = 9;
+// a.toString();
+
+let a = 9;
+a.toString(2); // a를 2진수로 계산
+
+////////////////////////
+
+function solution(data) {
+  let result = "";
+  for (let s of data.toString(2)) {
+    console.log(s);
+    if (s === "1") {
+      result += "A";
+    } else {
+      result += "B";
+    }
+  }
+  return result;
+}
+
+solution(9);
+
+////////////////////////
+
+function solution(data) {
+  return data.toString(2).replace(/1/g, "A").replace(/0/g, "B");
+}
+```
+
+## 워밍업 문제6
+
+- 문제이름 : 중복된 숫자 갯수
+- 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/120583
+
+```js
+function solution(array, n) {
+  let answer = 0;
+  for (let i of array) {
+    if (i === n) {
+      answer++;
+    }
+  }
+  return answer;
+}
+
+// 깔끔버전 (권장하지 않음)
+function solution(array, n) {
+  let answer = 0;
+  for (let i of array) if (i === n) answer++;
+  return answer;
+}
+
+//////// 메서드 활용 코드
+function solution(array, n) {
+  return array.filter((v) => v === n).length;
+}
+```
+
+## 워밍업 문제7
+
+- 문제이름 : 머쓱이보다 키 큰 사람
+- 링크 :https://school.programmers.co.kr/learn/courses/30/lessons/120585
+- 푸쉬 완료
+
+```js
+function solution(array, height) {
+  return array.filter((v) => v > height).length;
+}
+```
+
+## 워밍업 문제 8
+
+- 문제이름: 자릿수 더하기
+- 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/120906
+
+```js
+function solution(n) {
+  return n
+    .toString()
+    .split("")
+    .reduce((a, c) => a + parseInt(c), 0);
+}
+```
+
+# 2. 기본 자료구조와 알고리즘
+
+1. 스택과 큐
+2. 연결리스트
+3. 트리와 그래프
+   - 3.1 트리 구현
+   - 3.2 트리의 순회
+4. 정렬 알고리즘
+   - 4.1 선택정렬
+   - 4.2 삽입정렬
+   - 4.3 병합정렬
+   - 4.4 퀵정렬
+5. 페이지 교체 알고리즘
+6. 슬라이딩 윈도우와 투 포인터 알고리즘
+
+- 학문적 접근이 아니라면 이해를 미뤄두세요 : ADT
+
+## 2.1 스택과 큐
+
+### 2.1.1 스택과 큐의 개념
+
+- 스택 : LIFO() 쌓이는거 가장 최근에 들어온 값이 가장 먼저 나간다
+  가장 아래 값을 먼저 뺄 수 없는 구조
+- 큐: FIFO(First In First Out), 가장 먼저 들어온 데이터가 가장 먼저 나가는 구조
+- 스택과 큐 간단한 문제
+  - 다음중 스택이 될 수 없는 것은? 스택에 들어가는 값은 1, 2, 3, 4, 5이다
+    - 1. 1, 2, 3, 4, 5
+    - 2. 3, 2, 4, 5, 1
+    - 3. 4, 3, 2, 5, 1
+    - 4. 1, 5, 4, 2, 3 (v)
+
+### 2.1.2 스택과 큐의 구현
+
+```js
+// 스택 1번째 구현, 뒤에서 넣고 뒤에서 빼는 스택
+// 만약에 앞에서 빼면 스택이 깨지는 것이죠.
+// 할 수 있는데 스택을 유지하기 위해 안하는 겁니다.
+let stack = [];
+stack.push(1);
+stack.push(2);
+stack.push(3);
+stack.pop();
+console.log(stack);
+
+// 스택 2번째 구현, 앞에서 넣고 앞에서 빼는 스택
+// 보통은 1번을 많이 사용합니다.
+let stack = [];
+stack.unshift(1);
+stack.unshift(2);
+stack.unshift(3);
+stack.shift();
+console.log(stack);
+
+// 큐 1번째 구현, 뒤에서 넣고 앞에서 빼는 큐
+let queue = [];
+queue.push(1);
+queue.push(2);
+queue.push(3);
+queue.shift();
+console.log(queue);
+
+// 큐 2번째 구현, 앞에서 넣고 뒤에서 빼는 큐
+let queue = [];
+queue.unshift(1);
+queue.unshift(2);
+queue.unshift(3);
+queue.pop();
+console.log(queue);
+```
+
+### 2.1.3 스택과 큐의 문제
+
+- 문제링크 : https://jsalgo.co.kr/?page=6
+
+```js
+// 이 문제를 슬라이싱으로 풀면 아래 예제에서 오답이 나옵니다.
+// [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1]
+// [1, 2, 3, 4, 5, 6, 7, 8, 9].slice(-5)
+// [5, 6, 7, 8, 9] == [1, 2, 3, 4, 5, 6, 7, 8, 9].slice(-5)
+// JSON.stringify([5, 6, 7, 8, 9]) == JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9].slice(-5))
+
+// const comp = JSON.stringify
+// comp([5, 6, 7, 8, 9]) == comp([1, 2, 3, 4, 5, 6, 7, 8, 9].slice(-5))
+
+function solution(data) {
+  let stack = [];
+  let sandwich_count = 0;
+  for (let i of data) {
+    stack.push(i);
+    if (JSON.stringify(stack.slice(-5)) === JSON.stringify([1, 2, 3, 4, 1])) {
+      stack.splice(-5);
+      sandwich_count++;
+    }
+  }
+  return sandwich_count;
+}
+
+solution([1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1]);
+```
+
+## 2.2 연결리스트
+
+### 2.2.1 연결리스트의 개념
+
+- 연결리스트는 보통 메모리 효율을 위해 사용합니다.
+- 주로 데이터 부분과 다음 노드를 가리키는 포인터로 구성되어 있습니다.
+- 개념 : https://en.wikipedia.org/wiki/Linked_list
+- 알고리즘 시각화 : https://visualgo.net/ko
+
+### 2.2.2 연결리스트의 구현
+
+#### 2.2.2.1 step 1
+
+- 가장 친숙한 자료형으로 링크드리스트를 구현
+
+```js
+// step 1 - object로 linked list를 구현한다
+// 12, 99, 37
+// 적은 데이터는 [] 배열로 넣었을때 상관없지만
+// 수천억 수 조 개의 데이터가 있고 그 중 찾아야 한다면 트리 구조로 구현하는것이 가장 짧은 루트로 찾을 수 있다
+
+const linkedList = {
+  head: {
+    data: 12,
+    next: {
+      data: 99,
+      next: {
+        data: 37,
+        next: null,
+      },
+    },
+  },
+};
+console.log(linkedList["head"]);
+console.log(linkedList.head);
+```
+
+#### 2.2.2.2 step 2
+
+- object 로 linked list를 구현한다.
+- 계층적 구조를 분리해 깔끔하게 만든다.
+
+```js
+let linkedList = { head: null };
+let node1 = { data: 12, next: null };
+let node2 = { data: 99, next: null };
+let node3 = { data: 37, next: null };
+
+node1.next = node2;
+node2.next = node3;
+
+linkedList.head = node1;
+
+console.log(linkedList.head);
+console.log(linkedList.head.next.data);
+console.log(linkedList.head.next.next.data);
+```
+
+#### 2.2.2.3 step 3
+
+- object 로 linked list를 구현한다.
+- 순회 방법
+
+```js
+let linkedList = { head: null };
+//
+let node1 = { data: 10, next: null };
+let node2 = { data: 20, next: null };
+let node3 = { data: 30, next: null };
+let node4 = { data: 40, next: null };
+let node5 = { data: 50, next: null };
+
+node1.next = node2;
+node2.next = node3;
+node3.next = node4;
+node4.next = node5;
+
+linkedList.head = node1;
+
+let current = linkedList.head;
+while (current) {
+  console.log(current.data);
+  current = current.next;
+}
+```
+
+#### 2.2.2.4 step 4
+
+내가 직접 짜보기
+
+```js
+let linkedList = { haed: null };
+
+let node1 = { data: 10, next: null };
+let node2 = { data: 20, next: null };
+let node3 = { data: 30, next: null };
+let node4 = { data: 40, next: null };
+let node5 = { data: 50, next: null };
+
+node1.next = node2;
+node2.next = node3;
+node3.next = node4;
+node4.next = node5;
+
+linkedList.head = node1;
+
+let current = linkedList.head;
+let index = 0;
+while (current) {
+  if (current.data === 40) {
+    console.log(index);
+    break;
+  }
+  index++;
+  current = current.next;
+}
+```
+
+#### 2.2.2.5 step 5
+
+- class로 구현
+- 노드만 구현
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+// head = new Node("head"); // 적합하지 않음 node1으로 넣어주는게 좋음
+node1 = new Node(10);
+node2 = new Node(20);
+node3 = new Node(30);
+head = node1;
+
+node1.next = node2;
+node2.next = node3;
+```
+
+#### 2.2.2.6 step 6
+
+- class로 구현
+- 자동으로 값이 연결되게 만든다.
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    let init = new Node("init");
+    this.head = init;
+    this.tail = init;
+  }
+
+  push(data) {
+    let newNode = new Node(data);
+    // 마지막 값은 새로운 노드가 되어야 합니다.
+    this.tail.next = newNode;
+    // 마지막 노드는 새로운 노드가 되어야 합니다.
+    this.tail = newNode;
+  }
+}
+
+l = new LinkedList();
+l.push(10);
+l.push(20);
+l.push(30);
+l.push(40);
+
+console.log(l.head.next.next.data);
+console.log(l.head.next.next.next.data);
+```
+
+#### 2.2.2.7 step 7
+
+- class로 구현
+- toString length를 구해봅니다
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    let init = new Node("init");
+    this.head = init;
+    this.tail = init;
+    this.length = 0;
+  }
+
+  push(data) {
+    let newNode = new Node(data);
+    // 마지막 값은 새로운 노드가 되어야 합니다.
+    this.tail.next = newNode;
+    // 마지막 노드는 새로운 노드가 되어야 합니다.
+    this.tail = newNode;
+    this.length++;
+  }
+
+  toString() {
+    return `<${this.displayData.slice(0, -2)}>`;
+  }
+}
+
+l = new LinkedList();
+l.push(10);
+l.push(20);
+l.push(30);
+l.push(40);
+
+console.log(l.head.next.next.data);
+console.log(l.head.next.next.next.data);
+
+console.log(l.length);
+```
+
+#### 2.2.2.8 step 8
+
+- class로 구현
+- toString을 앞에서 object로 했던 것처럼 순회해서 구현합니다.
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    let init = new Node("init");
+    this.head = init;
+    this.tail = init;
+    this.length = 0;
+  }
+
+  push(data) {
+    let newNode = new Node(data);
+    // 마지막 값은 새로운 노드가 되어야 합니다.
+    this.tail.next = newNode;
+    // 마지막 노드는 새로운 노드가 되어야 합니다.
+    this.tail = newNode;
+    this.length++;
+  }
+
+  toString() {
+    let current = this.head.next;
+    while (current) {
+      result += `${cureent.data},`;
+      current = current.next;
+    }
+  }
+}
+
+l = new LinkedList();
+l.push(10);
+l.push(20);
+l.push(30);
+l.push(40);
+
+console.log(l.head.next.next.data);
+console.log(l.head.next.next.next.data);
+
+console.log(l.length);
+```
+
+#### 2.2.2.9 step 9
+
+- class로 구현
+- 데이터를 삽입하는 insert를 구현합니다.
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    let init = new Node("init");
+    this.head = init;
+    this.tail = init;
+    this.length = 0;
+  }
+
+  push(data) {
+    let newNode = new Node(data);
+    // 마지막 값은 새로운 노드가 되어야 합니다.
+    this.tail.next = newNode;
+    // 마지막 노드는 새로운 노드가 되어야 합니다.
+    this.tail = newNode;
+    this.length++;
+  }
+
+  toString() {
+    let current = this.head.next;
+    while (current) {
+      result += `${cureent.data},`;
+      current = current.next;
+    }
+  }
+
+  insert(index, data) {
+    let current = this.head.next;
+    for (let i = 0; i < index - 1; i++) {
+      current = current.next;
+    }
+    let newNode = new Node(data);
+    newNode.next=current.next;
+    current.next = newNode;
+    this.length++;
+  }
+}
+
+l = new LinkedList();
+l.push(10);
+l.push(20);
+l.push(30);
+l.push(40);
+l.insert(2, 100;)
+
+console.log(l.head.next.next.data);
+console.log(l.head.next.next.next.data);
+
+console.log(l.length);
+```
+
+### 2.2.3 연결리스트의 종류
+
+- Singly linked list
+- Doubly linked list
+- Circular linked list
+
+#### 2.2.3.1 Doubly linked list 형태
+
+```js
+const list = {
+  head: null,
+};
+
+let list1 = { value: 12, next: null, pre: null };
+let list2 = { value: 99, next: null, pre: null };
+let list3 = { value: 37, next: null, pre: null };
+let list4 = { value: 2, next: null, pre: null };
+
+list.head = list1;
+list1.next = list2;
+list2.next = list3;
+list3.next = list4;
+
+list1.pre = list;
+list2.pre = list1;
+list3.pre = list2;
+list4.pre = list3;
+
+list1.next.next.value;
+// 37
+list3.pre.pre.value;
+// 12
+list4.pre.pre.pre.next.next.value;
+// 37
+```
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+    this.pre = null;
+  }
+}
+
+class DoubleLinkedList {
+  constructor() {
+    let init = new Node("init");
+    this.head = init;
+    this.tail = init;
+  }
+
+  append(data) {
+    let 새로운노드 = new Node(data);
+
+    this.tail.next = 새로운노드;
+    새로운노드.pre = this.tail;
+
+    this.tail = 새로운노드;
+  }
+}
+
+l = new DoubleLinkedList();
+l.append(1);
+l.append(2);
+l.append(3);
+l.append(10);
+l.append(20);
+l.append(30);
+```
+
+## 쉬어가기 연습문제
+
+120844
+120864
+120956
+
+## 2.3 트리와 그래프
+
+## 2.4 정렬 알고리즘
+
+## 2.5 페이지 교체 알고리즘
+
+## 2.6 슬라이딩 윈도우와 투 포인터 알고리즘
