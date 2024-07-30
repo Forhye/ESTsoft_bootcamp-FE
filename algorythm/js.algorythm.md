@@ -978,6 +978,163 @@ function solution(my_string) {
 
 ## 2.3 트리와 그래프
 
+### 2.3.1 트리의 기본 형태
+
+```js
+// 초벌작업
+// 이진 트리의 기본형태
+// value
+// child - left
+// child - right
+const tree = {
+  root: {
+    value: 5,
+    left: {
+      value: 3,
+      left: null,
+      right: null,
+    },
+    right: {
+      value: 8,
+      left: null,
+      right: null,
+    },
+  },
+};
+```
+
+### 2.3.2 트리의 구현
+
+- 우리가 구현할 트리![](tree만들기_트리순회_2.png)
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+```
+
+```js
+const tree = {
+  head: {
+    value : 5,
+    left: {
+      value: 3,
+      left: {
+        value : 1,
+        left: null,
+        right: null
+      },
+      right: {
+        value : 4,
+        left : null,
+        right: null
+      }
+    },
+    right: {
+      value: 8,
+      left: {
+        value : 6
+        left: null,
+        right:null
+      },
+      right: {
+        value : 9,
+        left:null,
+        right:null
+      }
+    }
+  }
+};
+```
+
+깊스너큐 : 깊(깊이우선)스(스택)너(비우선)큐(queue)
+파선아실 : 파라미터는 선언 아규먼트는 실행
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class Tree {
+    constructor(data){
+        this.init = new Node(data);
+        this.root = this.init;
+        this.length = 0; // 노드의 갯수
+    }
+
+    add(data){
+        let newNode = new Node(data);
+        let current = this.root;
+        while (current) {
+            if (data == current.data) {
+                // 들어온 값이 이미 존재하는 값이면 추가하지 않습니다.
+                return;
+            } else if (data < current.data) {
+                // 왼쪽으로 이동해야 합니다.
+                // 이동한 곳에 데이터가 비어있으면 데이터를 넣습니다.
+                // 이동한 곳에 데이터가 있으면 계속 타고 내려갑니다.
+                if (!current.left) {
+                    current.left = newNode;
+                    this.length++;
+                    return;
+                }
+                current = current.left;
+            } else if (data > current.data) {
+                // 오른쪽으로 이동해야 합니다.
+                // 이동한 곳에 데이터가 비어있으면 데이터를 넣습니다.
+                // 이동한 곳에 데이터가 있으면 계속 타고 내려갑니다.
+                if (!current.right) {
+                    current.right = newNode;
+                    this.length++;
+                    return;
+                }
+                current = current.right;
+            }
+        }
+    }
+}
+
+
+    // 깊스너큐
+    DFS(){
+        // 깊이우선탐색, DFS(Depth First Search)
+        // Stack 이용
+
+        let result = []; // 방문경로
+        let stack = [this.root];
+
+        while (stack.length !== 0) {
+            let current = stack.pop();
+            if (current.right) {
+                stack.push(current.right)
+            };
+            if (current.left) {
+                stack.push(current.left)
+            };
+            result.push(current.data);
+        }
+
+        return result;
+    }
+
+
+let t = new Tree(5);
+t.add(3);
+t.add(8);
+t.add(1);
+t.add(4);
+t.add(6);
+t.add(9);
+```
+
 ## 2.4 정렬 알고리즘
 
 ## 2.5 페이지 교체 알고리즘
