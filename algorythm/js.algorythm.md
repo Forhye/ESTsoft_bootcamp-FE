@@ -963,7 +963,17 @@ function solution(data, direction) {
 }
 ```
 
-120864
+120864(숨어있는 숫자의 덧셈 2)
+
+```js
+// 특정 패턴 찾는 문제
+// "aAb1B2cC34oOp".match(/\d+/g)
+
+function solution(my_string) {
+  return my_string.match(/\d+/g).reduce((a, c) => a + parseInt(c), 0);
+}
+```
+
 120956
 
 ## 2.3 트리와 그래프
