@@ -1064,67 +1064,86 @@ class Node {
 }
 
 class Tree {
-    constructor(data){
-        this.init = new Node(data);
-        this.root = this.init;
-        this.length = 0; // 노드의 갯수
+  constructor(data) {
+    this.init = new Node(data);
+    this.root = this.init;
+    this.length = 0; // 노드의 갯수
+  }
+
+  add(data) {
+    let newNode = new Node(data);
+    let current = this.root;
+    while (current) {
+      if (data == current.data) {
+        // 들어온 값이 이미 존재하는 값이면 추가하지 않습니다.
+        return;
+      } else if (data < current.data) {
+        // 왼쪽으로 이동해야 합니다.
+        // 이동한 곳에 데이터가 비어있으면 데이터를 넣습니다.
+        // 이동한 곳에 데이터가 있으면 계속 타고 내려갑니다.
+        if (!current.left) {
+          current.left = newNode;
+          this.length++;
+          return;
+        }
+        current = current.left;
+      } else if (data > current.data) {
+        // 오른쪽으로 이동해야 합니다.
+        // 이동한 곳에 데이터가 비어있으면 데이터를 넣습니다.
+        // 이동한 곳에 데이터가 있으면 계속 타고 내려갑니다.
+        if (!current.right) {
+          current.right = newNode;
+          this.length++;
+          return;
+        }
+        current = current.right;
+      }
+    }
+  }
+
+  // 깊스너큐
+  DFS() {
+    // 깊이우선탐색, DFS(Depth First Search)
+    // Stack 이용
+
+    let result = []; // 방문경로
+    let stack = [this.root];
+
+    while (stack.length !== 0) {
+      let current = stack.pop();
+      if (current.right) {
+        stack.push(current.right);
+      }
+      if (current.left) {
+        stack.push(current.left);
+      }
+      result.push(current.data);
     }
 
-    add(data){
-        let newNode = new Node(data);
-        let current = this.root;
-        while (current) {
-            if (data == current.data) {
-                // 들어온 값이 이미 존재하는 값이면 추가하지 않습니다.
-                return;
-            } else if (data < current.data) {
-                // 왼쪽으로 이동해야 합니다.
-                // 이동한 곳에 데이터가 비어있으면 데이터를 넣습니다.
-                // 이동한 곳에 데이터가 있으면 계속 타고 내려갑니다.
-                if (!current.left) {
-                    current.left = newNode;
-                    this.length++;
-                    return;
-                }
-                current = current.left;
-            } else if (data > current.data) {
-                // 오른쪽으로 이동해야 합니다.
-                // 이동한 곳에 데이터가 비어있으면 데이터를 넣습니다.
-                // 이동한 곳에 데이터가 있으면 계속 타고 내려갑니다.
-                if (!current.right) {
-                    current.right = newNode;
-                    this.length++;
-                    return;
-                }
-                current = current.right;
-            }
-        }
+    return result;
+  }
+
+  BFS() {
+    // 너비우선탐색, BFS(Breadth First Search)
+    // Queue 이용
+
+    let result = []; // 방문경로
+    let queue = [this.root];
+
+    while (queue.length !== 0) {
+      let current = queue.shift();
+      if (current.right) {
+        queue.push(current.right);
+      }
+      if (current.left) {
+        queue.push(current.left);
+      }
+      result.push(current.data);
     }
+
+    return result;
+  }
 }
-
-
-    // 깊스너큐
-    DFS(){
-        // 깊이우선탐색, DFS(Depth First Search)
-        // Stack 이용
-
-        let result = []; // 방문경로
-        let stack = [this.root];
-
-        while (stack.length !== 0) {
-            let current = stack.pop();
-            if (current.right) {
-                stack.push(current.right)
-            };
-            if (current.left) {
-                stack.push(current.left)
-            };
-            result.push(current.data);
-        }
-
-        return result;
-    }
-
 
 let t = new Tree(5);
 t.add(3);
