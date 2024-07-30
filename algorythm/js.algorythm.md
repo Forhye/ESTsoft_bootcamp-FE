@@ -925,7 +925,44 @@ l.append(30);
 
 ## 쉬어가기 연습문제
 
-120844
+120844 (배열 회전시키기)
+
+```js
+// rotate 문제
+// 이어붙이기로 쉽게 풀이가 가능할 수 있다.
+// concat 또는 전개구문 [...]
+
+function solution(data, direction) {
+  if (direction === "right") {
+    const temp = data.pop();
+    data.unshift(temp);
+    return data;
+  } else {
+    const temp = data.shift();
+    data.push(temp);
+    return data;
+  }
+}
+
+function solution(numbers, direction) {
+  if (direction === "right") {
+    numbers = [numbers.pop(), ...numbers];
+  } else {
+    numbers = [...numbers.slice(1), numbers.shift()];
+  }
+  return numbers;
+}
+
+function solution(data, direction) {
+  const total = [...data, ...data];
+  if (direction === "right") {
+    return total.slice(data.length - 1, -1);
+  } else {
+    return total.slice(1, 1 + data.length);
+  }
+}
+```
+
 120864
 120956
 
