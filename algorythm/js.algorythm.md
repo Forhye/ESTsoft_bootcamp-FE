@@ -969,8 +969,25 @@ function solution(data, direction) {
 // 특정 패턴 찾는 문제
 // "aAb1B2cC34oOp".match(/\d+/g)
 
+// 일부에서는 실패함
 function solution(my_string) {
   return my_string.match(/\d+/g).reduce((a, c) => a + parseInt(c), 0);
+}
+
+function solution(my_string) {
+  return my_string.split(/\D+/).reduce((a, c) => a + Number(c), 0);
+}
+
+function solution(my_string) {
+  let replString = my_string.replace(/[A-z]/g, " ").split(" ");
+  console.log(replString);
+  let sum = 0;
+  for (let i = 0; i < replString.length; i++) {
+    if (!isNaN(replString[i])) {
+      sum += Number(replString[i]);
+    }
+  }
+  return sum;
 }
 ```
 
@@ -1155,6 +1172,12 @@ t.add(9);
 ```
 
 ## 2.4 정렬 알고리즘
+
+```js
+function solution(emergency) {
+  let sorted = emergency.slice().sort((a, b) => b - a);
+}
+```
 
 ## 2.5 페이지 교체 알고리즘
 
