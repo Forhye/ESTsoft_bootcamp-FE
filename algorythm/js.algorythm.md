@@ -998,7 +998,6 @@ function solution(my_string) {
 ### 2.3.1 트리의 기본 형태
 
 ```js
-// 초벌작업
 // 이진 트리의 기본형태
 // value
 // child - left
@@ -1037,34 +1036,34 @@ class Node {
 ```js
 const tree = {
   head: {
-    value : 5,
+    value: 5,
     left: {
       value: 3,
       left: {
-        value : 1,
+        value: 1,
         left: null,
-        right: null
+        right: null,
       },
       right: {
-        value : 4,
-        left : null,
-        right: null
-      }
+        value: 4,
+        left: null,
+        right: null,
+      },
     },
     right: {
       value: 8,
       left: {
-        value : 6
+        value: 6,
         left: null,
-        right:null
+        right: null,
       },
       right: {
-        value : 9,
-        left:null,
-        right:null
-      }
-    }
-  }
+        value: 9,
+        left: null,
+        right: null,
+      },
+    },
+  },
 };
 ```
 
@@ -1173,10 +1172,178 @@ t.add(9);
 
 ## 2.4 정렬 알고리즘
 
+- 정렬 알고리즘 3대장 비교(Best, Worst)
+  - 병합 정렬 : nlogn, nlogn
+  - 퀵 정렬 : nlogn, n\*\*2
+  - 팀 소트 : n, nlogn
+
 ```js
 function solution(emergency) {
   let sorted = emergency.slice().sort((a, b) => b - a);
 }
+```
+
+### 2.4.1 공간 복잡도와 시간 복잡도
+
+- 시간 복잡도 : 얼마나 많은 시간이 걸렸는지
+- 공간 복잡도 : 얼마나 많은 공간이 필요했는지
+
+```js
+// 시간 복잡도 계산
+// O(n)
+const n = 10;
+for (let i = 0; i < n; i++) {
+  console.log(i);
+}
+
+// O(n^2)
+const n = 10;
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j < n; j++) {
+    console.log(i, j);
+  }
+}
+
+// O(n^3)
+const n = 10;
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j < n; j++) {
+    for (let k = 0; k < n; k++) {
+      console.log(i, j, k);
+    }
+  }
+}
+
+// O(n)
+// 주의!
+// O(3n) => O(n)
+// 상수는 항상 무시됩니다.
+const n = 10;
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j < 3; j++) {
+    console.log(i, j);
+  }
+}
+```
+
+### 2.4.2 선택 정렬
+
+- 선택 정렬은 가장 작은 것을 선택해서 앞으로 보내눈 정렬
+
+* step 1
+
+```
+전 = [199, 22, 33, 12, 32, 64, 72, 222, 233]
+후 = []
+```
+
+- step 2
+
+```
+전 = [199, 22, 33, 32, 64, 72, 222, 233]
+후 = [12]
+```
+
+- step 3
+
+```
+전 = [199, 33, 32, 64, 72, 222, 233]
+후 = [12, 22]
+```
+
+- step 4
+
+```
+전 = [199, 33, 64, 72, 222, 233]
+후 = [12, 22, 32]
+```
+
+- step 5
+
+```
+전 = [199, 64, 72, 222, 233]
+후 = [12, 22, 32, 33]
+```
+
+- 선택정렬 구현
+
+```js
+let 입력값 = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+let 정렬된배열 = [];
+let 배열의길이 = 입력값.length;
+
+function 삽입값이_들어갈_인덱스(정렬된배열, 삽입값) {
+  for (const i in 정렬된배열) {
+    if (삽입값 < 정렬된배열[i]) {
+      return i;
+    }
+  }
+  return 정렬된배열.length;
+}
+
+for (let i = 0; i < 배열의길이; i++) {
+  let 삽입값 = 입력값.shift();
+  let 인덱스 = 삽입값이_들어갈_인덱스(정렬된배열, 삽입값);
+  정렬된배열.splice(인덱스, 0, 삽입값);
+}
+
+console.log(정렬된배열);
+
+// 참고만 하고 가도록 하겠습니다.
+function insertIndex(sorted_arr, value) {
+  //삽입될 위치를 찾는 함수
+  for (let i in sorted_arr) {
+    if (value < sorted_arr[i]) {
+      return i;
+    }
+  }
+  return sorted_arr.length;
+}
+
+function insertSort(arr) {
+  let sorted_arr = [];
+
+  while (arr.length != 0) {
+    let value = arr.shift();
+    //삽입될 위치를 반환함
+    let index = insertIndex(sorted_arr, value);
+    //삽입될 위치에 값을 반환
+    sorted_arr.splice(index, 0, value);
+  }
+  return sorted_arr;
+}
+const arr = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+console.log(insertSort(arr));
+
+let 입력값 = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+let 정렬된배열 = [];
+let 배열의길이 = 입력값.length;
+
+function insertIndex(sorted_arr, value) {
+  //삽입될 위치를 찾는 함수
+  for (let i in sorted_arr) {
+    if (value < sorted_arr[i]) {
+      return i;
+    }
+  }
+  return sorted_arr.length;
+}
+
+function insertSort(arr) {
+  let sorted_arr = [];
+
+  while (arr.length != 0) {
+    let [value, ...arr2] = arr;
+    arr = arr2;
+    //삽입될 위치를 반환함
+    let index = insertIndex(sorted_arr, value);
+    //삽입될 위치에 값을 반환
+    sorted_arr.splice(index, 0, value);
+  }
+  return sorted_arr;
+}
+const arr = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+console.log(insertSort(arr));
 ```
 
 ## 2.5 페이지 교체 알고리즘
