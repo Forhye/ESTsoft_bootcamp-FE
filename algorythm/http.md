@@ -94,4 +94,12 @@ console.log("해시:", url.hash);
 
 // 값 변경이 가능하다
 url.protocol = "ftp";
+
+// 쿼리 파라미터를 따로 뺄 수 있다
+// URLSearchParams 객체
+console.log("URLSearchParams 객체:", url.searchParams);
+console.log("query:", url.searchParams.get("query"));
+console.log("name:", url.searchParams.get("name"));
 ```
+
+- query (?~) 이후 나오는 것들은 서버로 전송할 데이터를 나타냄
