@@ -283,3 +283,53 @@ fetch("https://eduapi.weniv.co.kr/444/blog/1", {
 - 우리가 배웠던 HTTP는 TCP/IP 중 하나입니다. HTTP는 데이터의 교환을 담당하는 애플리케이션 계층에 속합니다.
 - HTMP, FTP, SNMP, TCP, IP, UDP 등이 ‘TCP/IP’에 포함됩니다.
   7.1 TCP
+
+## 4.4 OSI 7계층, TCP/IP 4계층
+
+- 통신을 위해 장비들이 먼저 개발되었습니다.
+- TCP/IP
+- 이 장비끼리 통신이 안되는 이슈가 생겼습니다.
+- 그래서 통신을 위한 표준을 만들었습니다.
+- OSI 7계층
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>OSI 7계층(표준화 목적)</th>
+      <th>TCP/IP 4계층(실용성)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>응용 계층</td>
+      <td>응용 계층</td>
+    </tr>
+    <tr>
+      <td>표현 계층</td>
+      <td>응용 계층</td>
+    </tr>
+    <tr>
+      <td>세션 계층</td>
+      <td>응용 계층</td>
+    </tr>
+    <tr>
+      <td>전송 계층</td>
+      <td>전송 계층</td>
+    </tr>
+    <tr>
+      <td>네트워크 계층</td>
+      <td>인터넷 계층</td>
+    </tr>
+    <tr>
+      <td>데이터링크 계층</td>
+      <td>네트워크 액세스 계층</td>
+    </tr>
+    <tr>
+      <td>물리 계층</td>
+      <td>네트워크 액세스 계층</td>
+    </tr>
+  </tbody>
+</table>
+```
