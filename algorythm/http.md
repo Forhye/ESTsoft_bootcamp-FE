@@ -118,6 +118,8 @@ console.log("name:", url.searchParams.get("name"));
 
 - referer : 어느 페이지를 경유해서 왔는지 알려준다.
 
+## request >
+
 ## HTTP 메서드 종류
 
 - GET : 리소스 취득 (? 뒤에 이어붙이는 방식 - 작은 값들)
@@ -135,10 +137,80 @@ console.log("name:", url.searchParams.get("name"));
   - URL을 알수 없어서 크롤링이 불가함
 
 - PUT: 리소스의 모든 것을 업데이트
+  - 데이터 전체 수정
 - DELETE : 리소스 삭제
 - PATCH: 리소스의 일부를 업데이트
-- HEAD : HTTP 헤더 정보만 요청, 해당 자원 존재 여부 확인 목적.GET과 비슷하지만 Response Body를 반환하지 않음.
 - OPTIONS : 웹서버가 지원하는 메소드 종류 반환 요청
+
+## HTTP 메서드 실습
+
+- GET
+
+  - GET 요청은 fetch를 그대로 사용해서 요청할 수 있다.
+
+  ```js
+  fetch("https://eduapi.weniv.co.kr/444/blog")
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+    .catch((error) => console.error(error));
+  ```
+
+- POST
+
+  - body로 데이터를 전달할 수 있다.
+
+  ```js
+  fetch("https://eduapi.weniv.co.kr/444/blog", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title: "test",
+      content: "test",
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+    .catch((error) => console.error(error));
+  ```
+
+- BE와 페이지를 만든 후 FE가 해야할 것의 절차
+
+  1. form을 만든다. 대부분 WYSIWYG 에디터를 사용 (토스트ui추천)
+  2. form으로 바로 제출되게 할 수도 있지만 put, patch, delete를 사용하려면 fetch를 사용해야 한다.
+     js에서 form에 입력된 데이터를 읽어와서 fetch 데이터로 옮겨줘야 한다.
+  3. fetch로 데이터를 보내면 BE에서 받아 DB에 저장한다.
+
+- PUT
+
+```js
+fetch("https://eduapi.weniv.co.kr/444/blog/1", {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    title: "test put",
+    content: "test put",
+  }),
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json))
+  .catch((error) => console.error(error));
+```
+
+- DELETE
+  - 지워도 객체가 남아있는 이유는 나머지 게시물의 번호가 달라질 수 있어서
+
+```js
+fetch("https://eduapi.weniv.co.kr/444/blog/1", {
+  method: "DELETE",
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json))
+  .catch((error) => console.error(error));
+```
 
 ### HTML form 태그에서 보내는 방식
 
@@ -146,5 +218,3 @@ console.log("name:", url.searchParams.get("name"));
 - DELETE나 PUT을 사용하지 않는 이유
   - form 규약을 만들 때 이 규약을 만드신 분이 반대했기 때문
   - form이라는 의도 자체가 뭔가를 생성하고 제출하는 기능이라서
-
-# request
