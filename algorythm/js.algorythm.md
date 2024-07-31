@@ -1599,4 +1599,65 @@ solution([3, 76, 24]);
 
 ## 2.5 페이지 교체 알고리즘
 
+- https://www.notion.so/paullabworkspace/db83d9c4bbe6410ea208e6dc2daff07e
+- 페이지 교체 알고리즘 : 메모리를 효율적으로 사용하기 위해서 어떤 데이터를 메모리에 적재할지 결정하는 알고리즘
+- FIFO(오래된 녀석이 가장 빨리 나간다)
+
+```
+// FIFO(시험에 나오지 않습니다.)
+['망치'] miss 5초
+['망치', '육각렌치'] miss 5초
+['망치', '육각렌치', '십자드라이버'] miss 5초
+// 여기서 망치를 사용한다면?
+['망치', '육각렌치', '십자드라이버'] hit 1초
+// 여기서 톱이 필요하다면?
+['육각렌치', '십자드라이버', '톱'] miss 5초
+
+// LRU(Least Recently Used, 시험에 나옵니다.)
+['망치'] miss 5초
+['망치', '육각렌치'] miss 5초
+['망치', '육각렌치', '십자드라이버'] miss 5초
+// 여기서 망치를 사용한다면?
+['육각렌치', '십자드라이버', '망치'] hit 1초
+// 여기서 만약 톱이 필요하다면?
+['십자드라이버', '망치', '톱'] miss 5초
+```
+
+### 2.5.1 LRU 알고리즘 구현
+
+- 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/17680
+
+```js
+// ["Jeju", "Pangyo", "Jeju", "Pangyo", "Seoul", "LA", "Pangyo", "NewYork"]
+// ["jeju"] miss 5초
+// ["jeju", "pangyo"] miss 5초
+// ["pangyo", "jeju"] hit 1초
+// ["jeju", "pangyo"] hit 1초
+// ["jeju", "pangyo", "seoul"] miss 5초
+// ...
+
+function solution(cacheSize, cities) {
+  let time = 0;
+  let cache = [];
+  for (let i = 0; i < cities.length; i++) {
+    let city = cities[i].toLowerCase();
+    let idx = cache.indexOf(city);
+    if (idx !== -1) {
+      //hit
+      cache.splice(idx, 1);
+      cache.push(city);
+      time += 1;
+    } else {
+      //miss
+      cache.push(city);
+      time += 5;
+      if (cache.length > cacheSize) {
+        cache.shift();
+      }
+    }
+  }
+  return time;
+}
+```
+
 ## 2.6 슬라이딩 윈도우와 투 포인터 알고리즘
