@@ -333,3 +333,46 @@ fetch("https://eduapi.weniv.co.kr/444/blog/1", {
   </tbody>
 </table>
 ```
+
+## 쿠키와 로컬스토리지
+
+- 쿠키
+  - 키와 값의 쌍으로 브라우저에 저장. 보통 4KB 이하로 제한.
+  - 클라이언트와 서버가 통신할 때 자동으로 데이터가 추가되어 들어갑니다.
+
+### 쿠키 예제
+
+```js
+// 예제1
+// 쿠키 설정
+document.cookie = "username=jun";
+
+// 쿠키 읽기
+const cookieValue = document.cookie;
+console.log(cookieValue);
+
+// 쿠키 추가
+document.cookie = "age=10";
+// 여기에 있는 쿠키는 `"username=jun"`만 들어있는 상태입니다.
+console.log(cookieValue);
+```
+
+```js
+// 예제2
+// 쿠키 설정
+document.cookie =
+  "username=jun; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+// 쿠키 변경
+document.cookie =
+  "username=juni; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+// 쿠키 추가
+document.cookie = "age=10";
+
+// 쿠키 삭제
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+// 쿠키 읽기
+console.log(document.cookie);
+```
