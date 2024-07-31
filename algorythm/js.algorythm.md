@@ -1530,6 +1530,73 @@ function 퀵정렬(입력배열) {
 퀵정렬(입력값);
 ```
 
+### 2.4.5 코딩테스트에 나오는 정렬 유형
+
+```js
+data = [
+  [23, 33, "hello world"],
+  [42, 11, "hello wo"],
+  [33, 25, "hello wor"],
+  [11, 12, "hello worl"],
+  [82, 23, "hello"],
+];
+
+// 0번째 인덱스로 정렬
+data.sort((a, b) => a[0] - b[0]);
+data.sort((a, b) => b[0] - a[0]);
+
+// 2번째 있는 글자의 글자수로 정렬
+data.sort((a, b) => a[2].length - b[2].length);
+
+// 국영수 점수와 이름
+data = [
+  [[23, 33, 44], "licat"],
+  [[42, 11, 12], "mura"],
+  [[33, 25, 33], "binky"],
+  [[11, 12, 11], "gary"],
+  [[82, 23, 22], "sun"],
+];
+
+// 국영수 점수의 평균이 가장 높은 사람 순으로 사람만 출력해주세요.
+data.sort((a, b) => b[0].reduce() - a[0].reduce());
+data.sort(
+  (a, b) => b[0].reduce((a, c) => a + c, 0) - a[0].reduce((a, c) => a + c, 0)
+);
+const sorted_data = data.sort(
+  (a, b) => b[0].reduce((a, c) => a + c, 0) - a[0].reduce((a, c) => a + c, 0)
+);
+
+// 추출은 map입니다.
+sorted_data.map((data) => data[1]);
+
+data = [
+  { name: "licat", age: 23 },
+  { name: "mura", age: 42 },
+  { name: "binky", age: 33 },
+  { name: "gary", age: 11 },
+  { name: "sun", age: 82 },
+];
+
+// age 순서대로 정렬하고 싶을 때
+data.sort((a, b) => a.age - b.age);
+```
+
+### 2.4.5-2 2번째 문제
+
+- 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/120835
+
+```js
+function solution(emergency) {
+  // emergency: [3, 76, 24]
+  // sorted: [76, 24, 3]
+  // 우리가 원하는 값: [3, 1, 2]
+  let sorted = emergency.slice().sort((a, b) => b - a);
+  return emergency.map((data) => sorted.indexOf(data) + 1);
+}
+
+solution([3, 76, 24]);
+```
+
 ## 2.5 페이지 교체 알고리즘
 
 ## 2.6 슬라이딩 윈도우와 투 포인터 알고리즘
