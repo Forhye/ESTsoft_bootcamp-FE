@@ -257,3 +257,84 @@ function solution(dartResult) {
 
 console.log(solution("1S2D3T"));
 ```
+
+3. 오픈채팅방(19년)
+
+- 링크 : https://school.programmers.co.kr/learn/courses/30/lessons/42888?language=javascript
+
+```js
+{
+    '아이디': '닉네임',
+    '아이디': '닉네임',
+    '아이디': '닉네임',
+    '아이디': '닉네임'
+    // 이렇게 관리해서 나중에 문자열 조합을 통해
+    // 문제에서 원하는 결과물을 출력
+}
+
+// 위 데이터를 가지고
+
+[
+"Prodo님이 들어왔습니다.",
+"Ryan님이 들어왔습니다.",
+"Prodo님이 나갔습니다.",
+"Prodo님이 들어왔습니다."
+]
+
+
+// step1
+// 5분 ~ 10분
+const record = [
+    "Enter uid1234 Muzi",
+    "Enter uid4567 Prodo",
+    "Leave uid1234",
+    "Enter uid1234 Prodo",
+    "Change uid4567 Ryan"
+]
+
+function solution(record){
+    let answer = [];
+    let user = {};
+
+    for (const i of record){
+        let [상태, 아이디, 닉네임] = i.split(' ');
+        answer.push([상태, 아이디, 닉네임]);
+    }
+
+    return answer;
+}
+
+solution(record)
+
+// step2
+const record = [
+    "Enter uid1234 Muzi",
+    "Enter uid4567 Prodo",
+    "Leave uid1234",
+    "Enter uid1234 Prodo",
+    "Change uid4567 Ryan"
+]
+
+function solution(record){
+    let answer = [];
+    let user = {};
+
+    for (const i of record){
+        let [상태, 아이디, 닉네임] = i.split(' ');
+        if (상태 === 'Enter') {
+            user[아이디] = 닉네임;
+            answer.push([아이디, '님이 들어왔습니다.']);
+        } else if (상태 === 'Change') {
+            user[아이디] = 닉네임;
+        } else if (상태 === 'Leave') {
+            answer.push([아이디, '님이 나갔습니다.']);
+        }
+    }
+
+    answer = answer.map(([아이디, 상태]) => `${user[아이디]}${상태}`);
+
+    return answer;
+}
+
+solution(record)
+```
