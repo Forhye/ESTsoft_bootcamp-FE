@@ -20,6 +20,12 @@
       <li>hello world</li>
       <li>hello world</li>
     </ul>
+
+    <input name="man-news" />
+    <input name="milkman" />
+    <input name="letterman2" />
+    <input name="newmilk" />
+
     <script>
       $("li").eq(3).css("color", "royalblue");
       $("li:gt(7)").css("color", "#ffb");
@@ -29,6 +35,8 @@
       $("li:last").css("color", "orange");
       $("li:even").css("color", "darkgreen");
       $("li:odd").css("color", "coral");
+
+      $("input[name*='man']").val("!!"); // 네임에 man 이 들어가는 속성에 val 를 넣어준다
     </script>
   </body>
 </html>
