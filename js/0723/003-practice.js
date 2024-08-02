@@ -62,6 +62,8 @@ async function fetchAndDisplayUsers() {
 
     userData.forEach(({ name, phone, username, email, website }) => {
       const $li = document.createElement("li");
+
+      // 템플릿 리터럴
       $li.innerHTML = `
           <ol>
             <li>이름 : ${name}</li>
