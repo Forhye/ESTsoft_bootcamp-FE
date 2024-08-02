@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 어디에 넣어도 상관없음 원래 헤드엔 cdn을 넣음 
+     다만 순서대로 읽는데 body 요소 중간에 제이쿼리가 들어가 있을 수도 있기 때문에
+     수업에서만 맨 위에 넣고 사용 -->
+  </head>
+  <body>
+    <ul>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+      <li>hello</li>
+    </ul>
+    <script>
+      // 자식으로 넣는 것
+      $("ul").append("<li>list 추가 뒤</li>");
+      $("ul").prepend("<li>list 추가 앞</li>");
+
+      // 형제로 넣는 것
+      $("ul").before("<p>hello</p>");
+      $("ul").after("<p>hello world</p>");
+    </script>
+  </body>
+</html>
