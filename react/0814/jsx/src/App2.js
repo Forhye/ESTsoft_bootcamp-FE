@@ -1,41 +1,28 @@
-function App2() {
-  const list = [
-    { no: 1, area: "대전", visited: false },
-    { no: 2, area: "부산", visited: true },
-    { no: 3, area: "목포", visited: false },
-    { no: 4, area: "제주도", visited: false },
-  ];
+import "./App2.css";
 
-  const area = list.map(function (obj) {
-    return obj.area;
-  });
+const list = [
+  { no: 1, area: "대전", visited: false },
+  { no: 2, area: "부산", visited: true },
+  { no: 3, area: "목포", visited: false },
+  { no: 4, area: "제주도", visited: false },
+];
 
-  const visited = list.map(function (obj) {
-    if (obj.visited === true) {
-      obj.style = { backgroundColor: "royalBlue" };
-    }
-    return obj.visited;
-  });
-
-  // let liStyle = { border: "1px solid #fff" };
+const items = list.map((item) => {
   return (
-    <div>
-      <ul style={{ listStyle: "none", border: "1px solid #fff" }}>
-        <li>
-          {area[0]} {visited}
-        </li>
-        <li>
-          {area[1]} {visited}
-        </li>
-        <li>
-          {area[2]} {visited}
-        </li>
-        <li>
-          {area[3]} {visited}
-        </li>
-      </ul>
-    </div>
+    // 고유한 키를 넣어줘야 한다
+    <li key={item.no} className={item.visited ? "active" : null}>
+      {item.area}
+    </li>
   );
+});
+
+function TripList() {
+  return <ul className="list-area">{items}</ul>;
+}
+
+function App2() {
+  // let liStyle = { border: "1px solid #fff" };
+  return <TripList />;
 }
 
 export default App2;
