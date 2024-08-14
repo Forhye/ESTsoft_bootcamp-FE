@@ -21,7 +21,9 @@ function App() {
 
   // 분이 한자리 일때 앞에 0을 붙이지
   const minutes =
-    today.getMinutes() > 10 ? today.getMinutes : "0" + today.getMinutes();
+    today.getMinutes() > 10 ? today.getMinutes() : "0" + today.getMinutes();
+  const seconds =
+    today.getSeconds() > 10 ? today.getSeconds() : "0" + today.getSeconds();
 
   return (
     <div style={{ background: "#000", color: "white" }}>
@@ -31,7 +33,7 @@ function App() {
       </p>
       <p>시간 : {time}</p>
       <p>
-        12시간제 : {ampm} {hour}시 {minutes}
+        12시간제 : {ampm} {hour}시 {minutes}분 {seconds}초
       </p>
       {/* <h1>시간 : {hour}시 {min}분 {sec}초</h1> */}
     </div>
