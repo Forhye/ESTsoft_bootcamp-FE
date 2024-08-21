@@ -8,6 +8,11 @@ import Normalize from "styled-normalize";
 const GlobalStyle = createGlobalStyle`
 ${Normalize}
 
+li{
+  list-style: none;
+}
+
+
 span{
   color: darkolivegreen;
   font-size: 2rem;
