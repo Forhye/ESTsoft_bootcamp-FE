@@ -39,4 +39,8 @@
   font-size: 13px;
 }
 
+.active {
+  display: block;
+}
+
 /* 모달 스타일 끝 */
