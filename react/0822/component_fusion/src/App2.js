@@ -20,7 +20,11 @@ function App2() {
   //     );
   //   };
 
-  const ProductPrice = ({ children }) => <p>가격 : {children}</p>;
+  const ProductPrice = ({ children, currency }) => (
+    <p>
+      가격 : {children} {currency}
+    </p>
+  );
 
   const ContCard = ({ children }) => (
     <div className="cont-card">{children}</div>
@@ -41,7 +45,7 @@ function App2() {
         eum quia.
       </ProductDescription>
       {/* <ProductPrice price={1000} currencyCode={"KRW"} /> */}
-      <ProductPrice>{1000} KRW</ProductPrice>
+      <ProductPrice currency={"KRW"}>{1000}</ProductPrice>
     </ContCard>
   );
 }
