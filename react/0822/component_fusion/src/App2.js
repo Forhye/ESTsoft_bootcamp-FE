@@ -1,4 +1,5 @@
 import React from "react";
+import PriceFormatter from "./PriceFormatter";
 
 function App2() {
   const ProductImage = ({ src, alt }) => {
@@ -46,6 +47,7 @@ function App2() {
       </ProductDescription>
       {/* <ProductPrice price={1000} currencyCode={"KRW"} /> */}
       <ProductPrice currency={"KRW"}>{1000}</ProductPrice>
+      <PriceFormatter price={100} currencyCode={"GBP"} />
     </ContCard>
   );
 }
