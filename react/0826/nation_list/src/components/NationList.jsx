@@ -1,38 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
-const nations = [
-  {
-    title: "France",
-    population: "200",
-    id: "1",
-    loc: "europe",
-  },
-  {
-    title: "Italy",
-    population: "300",
-    id: "2",
-    loc: "europe",
-  },
-  {
-    title: "England",
-    population: "400",
-    id: "3",
-    loc: "europe",
-  },
-  {
-    title: "America",
-    population: "500",
-    id: "4",
-    loc: "north-america",
-  },
-  {
-    title: "Korea",
-    population: "600",
-    id: "5",
-    loc: "asia",
-  },
-];
 
 const Item = styled.div`
   margin: 60px auto;
@@ -52,6 +19,44 @@ const Item = styled.div`
 `;
 
 export default function NationList() {
+  const [nations, setNations] = useState([]);
+
+  const [url, setUrl] = useState("http://localhost:3000/nations");
+
+  // 컴포넌트가 마운트될때 데이터를 가져온다
+  useEffect(() => {
+    console.log("Fetching data...");
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setNations(data))
+      .catch((error) => console.error("Error"));
+  }, [url]);
+
+  // try catch 문법
+  //   useEffect(() => {
+
+  //     const fetchData = async () => {
+
+  //         try {
+  //             const response = await fetch('http://localhost:3000/nations');
+
+  //             if (!response.ok) {
+  //                 throw new Error();
+  //             }
+
+  //             const json = await response.json();
+
+  //             setNations(json);
+  //         } catch (err) {
+  //             console.error('데이터를 가져오는데 문제가 발생했습니다!', err);
+  //         }
+
+  //     }
+
+  //     fetchData();
+  // }, []);
+
   return (
     <Item>
       <ul>
@@ -64,6 +69,27 @@ export default function NationList() {
           );
         })}
       </ul>
+      <button
+        onClick={() => {
+          setUrl("http://localhost:3000/nations");
+        }}
+      >
+        전체 목록
+      </button>
+      <button
+        onClick={() => {
+          setUrl("http://localhost:3000/nations?loc=europe");
+        }}
+      >
+        유럽 목록
+      </button>
+      <button
+        onClick={() => {
+          setUrl("http://localhost:3000/nations?loc=asia");
+        }}
+      >
+        아시아 목록
+      </button>
     </Item>
   );
 }
