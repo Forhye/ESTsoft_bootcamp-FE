@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.js"></script>
+
+    <title>redux 실습</title>
+
+    <!--css-->
+    <style></style>
+  </head>
+  <body>
+    <input type="text" />
+
+    <button>Click Me!</button>
+    <button>Rounded!</button>
+    <button>Circle</button>
+    <button>Rect</button>
+    <button>red</button>
+    <button>blue</button>
+    <button>Green</button>
+
+    <section
+      style="
+        border: 2px solid black;
+        padding: 20px;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      "
+    >
+      <div
+        class="text-box"
+        style="
+          font-size: 2rem;
+          width: 25%;
+          height: 150px;
+          border: 5px solid coral;
+          padding: 20px;
+        "
+      >
+        hello
+      </div>
+    </section>
+
+    <script>
+      function reducer(state, action) {
+        console.log(action);
+
+        if (state === undefined) {
+          return { color: "red" };
+        }
+      }
+
+      const store = Redux.createStore(reducer);
+
+      function rounded() {
+        let state = store.getState();
+        document.querySelector("div").innerHTML = `
+                <div style="border-radius:3px"> hello </div>
+            `;
+      }
+      store.subscribe(rounded);
+      rounded();
+    </script>
+  </body>
+</html>
