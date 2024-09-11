@@ -2,14 +2,24 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./index.ts",
-    module: {},
-    resolve: {
-        extensions: ["ts", "tsx", "js", "jsx", "json"],
-    },
+    entry: path.resolve(__dirname, "index.ts"),
     output: {
-        filename: "index.js",
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "dist/"),
+        filename: "app.js",
     },
-    plugins: [new HtmlWebpackPlugin()],
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx"],
+    },
+    module: {
+        rules: [{ test: /\.ts$/, use: "ts-loader" }],
+    },
+    mode: "production",
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "./index.html"),
+        }),
+    ],
+    watch: true,
 };
+
+// 명령어 : npx webpack --config ./webpack.config.js
