@@ -1,8 +1,8 @@
 import { useState, ChangeEvent } from "react";
-import TodoView from "./TodoView";
+import TodoView, { AddTodoButton, TodoInput, TodoList } from "./TodoView";
 import useTodoData from "../hooks/todoHook";
 
-const Todo = (): JSX.Element => {
+const Todo = () => {
     const [todoText, setTodoText] = useState<string>("");
     const [todoList, postTodo, isLoading] = useTodoData();
 
@@ -33,7 +33,15 @@ const Todo = (): JSX.Element => {
         handleButton,
     };
 
-    return isLoading ? <h1>로딩중 페이지</h1> : <TodoView {...props} />;
+    return isLoading ? (
+        <h1>로딩중 페이지</h1>
+    ) : (
+        <TodoView>
+            <TodoList todoList={todoList} />
+            <TodoInput todotext={todoText} handleInput={handleInput} />
+            <AddTodoButton handleButton={handleButton} />
+        </TodoView>
+    );
 };
 
 export default Todo;
