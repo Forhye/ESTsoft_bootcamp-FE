@@ -20,4 +20,4 @@ const appFireStore = getFirestore(app);
 // 인증 초기화
 const appAuth = getAuth();
 
-export default appAuth;
+export { appAuth };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { appAuth } from "firebase/auth";
+import appAuth from "../firebase/config";
 
 export const useSignup = () => {
     // 에러 상태 관리
