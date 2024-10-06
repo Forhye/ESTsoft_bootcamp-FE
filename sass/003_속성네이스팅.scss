@@ -1,0 +1,13 @@
+.icon {
+    width: 100px;
+    height: 100px;
+    background: {
+        color: #f00;
+        image: url("icon.png");
+        position: center;
+        repeat: no-repeat;
+    }
+    border: {
+        radius: 10px;
+    }
+}
