@@ -1,0 +1,16 @@
+.one {
+    .box {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        transition: all 0.3s;
+        // box의 호버다
+        &:hover {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+        }
+    }
+}
+
+// 일반 CSS에서도 네이스팅 + & 사용 가능(24년 9월 확인)
